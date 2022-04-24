@@ -1,6 +1,6 @@
 ---
-title: "Hack The Box - BOX NAME HERE"
-author: Ryan Kozak
+title: "Hack The Box - Forest"
+author: Ryan Ko
 date: "2021-06-15"
 subject: "CTF Writeup Template"
 keywords: [HTB, CTF, Hack The Box, Security]
@@ -47,7 +47,7 @@ From the above output we can see that ports, **22**, **53**, **81**, and **444**
 
 Look  here's an image of my website, this is how you format an image.
 
-![My Website](./images/ryankozak.com.png)
+![My Website](./image/1.png)
 \ **Figure 1:** My Website
 
 
