@@ -107,11 +107,17 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 89.26 seconds
 
 ```
+In the nmap output we have a lot information. For the moment keep in mind that machine is leaked the dns name: **htb.local**. So I put in */etc/hosts* the name of forest.htb.local.
+
 Let’s make some mental notes about the scan results:
 * Port 53, 88 is open now, looks like this is a Domain Controller.
-* The nmap scan leaks the domain and hostname: htb.local and FOREST.htb.local. Similarly, the SMB OS nmap scan leaks the operating system: Windows Server 2016 Standard 14393.
+* The nmap scan leaks the domain and hostname: **htb.local** and **FOREST.htb.local**. Similarly, the SMB OS nmap scan leaks the operating system: Windows Server 2016 Standard 14393.
 * Port 389 is running LDAP. We’ll need to query it for any useful information. Same goes for SMB.
 * Port 5985 opens, which means if I can find credentials for a user through SMB or LDAP, I might be able to get a an get a shell over WinRM.
+
+##Enumeration
+
+###LDAP
 
 
 
