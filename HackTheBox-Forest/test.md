@@ -38,8 +38,82 @@ PORT      STATE SERVICE
 49929/tcp open  unknown
 
 Nmap done: 1 IP address (1 host up) scanned in 581.13 seconds
+
+┌─[kimkhuongduy@drgon]─[~/Documents/Github/write-up/HackTheBox-Forest]
+└──╼ $sudo nmap -sC -sV -Pn -O -p 53,88,135,139,389,445,464,593,636,3268,3269,5985,9389,47001,49664,49665,49666,49667,49671,49676,49677,49684,49703,49929 -o nmap_basic.txt 10.10.10.161
+[sudo] password for kimkhuongduy: 
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-24 12:45 EDT
+Nmap scan report for htb.local (10.10.10.161)
+Host is up (0.25s latency).
+
+PORT      STATE SERVICE      VERSION
+53/tcp    open  domain       Simple DNS Plus
+88/tcp    open  kerberos-sec Microsoft Windows Kerberos (server time: 2022-04-24 16:52:47Z)
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp   open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf       .NET Message Framing
+47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc        Microsoft Windows RPC
+49665/tcp open  msrpc        Microsoft Windows RPC
+49666/tcp open  msrpc        Microsoft Windows RPC
+49667/tcp open  msrpc        Microsoft Windows RPC
+49671/tcp open  msrpc        Microsoft Windows RPC
+49676/tcp open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+49677/tcp open  msrpc        Microsoft Windows RPC
+49684/tcp open  msrpc        Microsoft Windows RPC
+49703/tcp open  msrpc        Microsoft Windows RPC
+49929/tcp open  msrpc        Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Microsoft Windows Server 2016 build 10586 - 14393 (95%), Microsoft Windows 10 1507 - 1607 (93%), Microsoft Windows Server 2016 (93%), Microsoft Windows 7, Windows Server 2012, or Windows 8.1 Update 1 (93%), Microsoft Windows Vista SP1 (93%), Microsoft Windows 10 (92%), Microsoft Windows 10 1507 (92%), Microsoft Windows 10 1511 (92%), Microsoft Windows Server 2012 (92%), Microsoft Windows Server 2012 R2 (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: FOREST; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: FOREST
+|   NetBIOS computer name: FOREST\x00
+|   Domain name: htb.local
+|   Forest name: htb.local
+|   FQDN: FOREST.htb.local
+|_  System time: 2022-04-24T09:53:50-07:00
+|_clock-skew: mean: 2h26m50s, deviation: 4h02m33s, median: 6m47s
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2022-04-24T16:53:49
+|_  start_date: 2022-04-24T16:25:29
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 89.26 seconds
+
 ```
-From the above output we can see that ports, **22**, **53**, **81**, and **444** are the ports open. This is just an example to show code formatting so who cares.
+Let’s make some mental notes about the scan results:
+*Port 53, 88 is open now, looks like this is a Domain Controller.
+*The nmap scan leaks the domain and hostname: htb.local and FOREST.htb.local. Similarly, the SMB OS nmap scan leaks the operating system: Windows Server 2016 Standard 14393.
+*Port 389 is running LDAP. We’ll need to query it for any useful information. Same goes for SMB.
+*Port 5985 opens, which means if I can find credentials for a user through SMB or LDAP, I might be able to get a an get a shell over WinRM.
+
+
 
 Look  here's an image of my website, this is how you format an image.
 
