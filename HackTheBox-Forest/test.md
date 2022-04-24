@@ -1,47 +1,43 @@
----
-title: "Hack The Box - Forest"
-author: Ryan Ko
-date: "2021-06-15"
-subject: "CTF Writeup Template"
-keywords: [HTB, CTF, Hack The Box, Security]
-lang: "en"
-titlepage: true
-title-page-color: "141d2b"
-titlepage-rule-color: "11b925"
-titlepage-text-color: "FFFFFF"
-toc: true
-toc-own-page: true
-titlepage-background: "./images/bg.pdf"
-...
+# Forest
 
-
-*Everything below is just random stuff for the sake of example.*
-
-# Information Gathering
-
-## Nmap
+## Reconnaissance
 We begin our reconnaissance by running an Nmap scan checking default scripts and testing for vulnerabilities.
 
 ```console
-x@wartop:~$ nmap -sVC 192.168.100.6
+┌─[kimkhuongduy@drgon]─[~/Documents/Github/write-up/HackTheBox-Forest]
+└──╼ $sudo nmap -sS -Pn -p- --min-rate 5000 -o nmap_alltcp.txt 10.10.10.161
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-24 12:24 EDT
+Warning: 10.10.10.161 giving up on port because retransmission cap hit (10).
+Nmap scan report for htb.local (10.10.10.161)
+Host is up (0.33s latency).
+Not shown: 65212 closed tcp ports (reset), 299 filtered tcp ports (no-response)
+PORT      STATE SERVICE
+53/tcp    open  domain
+88/tcp    open  kerberos-sec
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+389/tcp   open  ldap
+445/tcp   open  microsoft-ds
+464/tcp   open  kpasswd5
+593/tcp   open  http-rpc-epmap
+636/tcp   open  ldapssl
+3268/tcp  open  globalcatLDAP
+3269/tcp  open  globalcatLDAPssl
+5985/tcp  open  wsman
+9389/tcp  open  adws
+47001/tcp open  winrm
+49664/tcp open  unknown
+49665/tcp open  unknown
+49666/tcp open  unknown
+49667/tcp open  unknown
+49671/tcp open  unknown
+49676/tcp open  unknown
+49677/tcp open  unknown
+49684/tcp open  unknown
+49703/tcp open  unknown
+49929/tcp open  unknown
 
-Starting Nmap 7.01 ( https://nmap.org ) at 2019-08-11 08:57 PDT
-Nmap scan report for 192.168.100.6 (192.168.100.1)
-Host is up (0.022s latency).
-Not shown: 996 closed ports
-PORT    STATE SERVICE  VERSION
-22/tcp  open  ssh      OpenSSH 7.9 (protocol 2.0)
-53/tcp  open  domain
-81/tcp  open  http     Apache httpd
-|_http-server-header: Apache
-444/tcp open  ssl/http Apache httpd
-|_http-server-header: Apache
-| ssl-cert: Subject: commonName=192.168.100.6
-| Not valid before: 2018-07-06T14:40:08
-|_Not valid after:  4756-06-01T14:40:08
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 201.22 seconds
+Nmap done: 1 IP address (1 host up) scanned in 581.13 seconds
 ```
 From the above output we can see that ports, **22**, **53**, **81**, and **444** are the ports open. This is just an example to show code formatting so who cares.
 
