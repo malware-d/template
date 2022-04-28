@@ -151,3 +151,4 @@ Now we can use **Copy-FileSeBackupPrivilege** to copy files from our Shadow driv
 ```console
 *Evil-WinRM* PS C:\Users\svc_backup\Documents> Copy-FileSeBackupPrivilege w:\Windows\NTDS\ntds.dit C:\Users\svc_backup\Documents\ntds.dit
 ```
+> NOTE: In the case of a DC, the privilege only allows you to make **BACKUPS NOT COPIES**. In a standalone system, we can make copies of the files (SAM and SYSTEM hive). In the case of DC, the method differs as now we need to make backups of the **NTDS.dit** and **SYSTEM** files to extract the password hash of users.
