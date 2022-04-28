@@ -121,6 +121,7 @@ In local machine:
 ┌─[kimkhuongduy@drgon]─[~/Documents/hackthebox/Blackfield]
 └──╼ $unix2dos shadow.dsh
 ```
+ *Usually upload to folder C:\Windows\Temp*
 Then execute the diskshadow and using the script file as its inputs.
 ```console
 *Evil-WinRM* PS C:\Users\svc_backup\Documents> diskshadow /s shadowscript.dsh
