@@ -10,7 +10,8 @@ There are 2 prerequisites for this privilege escalation:
 Find SUID/SGID files on the target:
 
 ```console
-find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
+┌─[kimkhuongduy@drgon]─[~/Documents/Github/template/privilege escalation/linux]
+└──╼ $find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
 ...
 -rwsr-sr-x 1 root staff 6883 May 14 2017 /bin/sysinfo
 ...
