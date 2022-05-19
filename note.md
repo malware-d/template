@@ -61,7 +61,7 @@ Every program run from the command line has three data streams connected to it t
 | Standard Output (STDOUT) | Output from the program (default to terminal) |
 | Standard Error (STDERR)  | Error messages (default to terminal)          |
 ### Redirecting to a File
-```
+```console
 #to a New File. If we redirect the output to a non-existent file, the file will be created automatically. However, if we save the output to a file that already exists, that file's content will be replaced. There is no undo function!
 kali@kali:~$ echo "Kali Linux is an open source project" > redirection_test.txt
 
