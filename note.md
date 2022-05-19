@@ -73,7 +73,7 @@ that is maintained and funded by Offensive Security
 ```
 ### Redirecting from a File
 For example, we redirect the wc command's STDIN with data originating directly from the file we generated.
-```
+```console
 kali@kali:~$ wc -m < redirection_test.txt
 89
 ```
