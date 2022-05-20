@@ -4,6 +4,8 @@
 3. [Piping and Redirection](#Piping-and-Redirection)
 4. [Text Searching and Manipulation](#Text-Searching-and-Manipulation)
 5. [Managing Processes](#Managing-Processes)
+6. [File and Command Monitoring](#File-and-Command-Monitoring)
+7. [Downloading Files](#Downloading-Files)
 ## Finding Files in Kali Linux
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
@@ -202,4 +204,34 @@ kali@kali:~$ ps -fC chrome
 **kill** stops the process without interacting with the GUI. **kill**'s purpose is to send a specific signal to a process (default: SIGTERM -request termination).
 ```console
 kali@kali:~$ kill 1307
+```
+## File and Command Monitoring
+How to monitor files and commands in real-time?
+### tail >< head
+The most common use of **tail** is to monitor log file entries as they are being written (default display last 10 lines). 
+```console
+kali@kali:~$ sudo tail -f /var/log/apache2/access.log
+```
+**-f** option (follow) continuously updates the output as the target file grows, **-nX**, which outputs the last X number of lines, instead of the default value of 10.
+### watch
+The **watch** command is used to run a designated command at regular intervals (default - 2s). Different interval by using the **-n X**
+```console
+kali@kali:~$ watch -n 5 ls -al
+kali@kali:~$ watch "ps -e --sort=-pcpu -o pid,pcpu,comm"
+```
+## Downloading Files
+### wget
+The **wget** downloads files using the HTTP/HTTPS and FTP protocols.
+```console
+kali@kali:~$ wget -O report_wget.pdf https://www.offensive-security.com/reports/data.pdf
+```
+### curl
+**curl** is a tool to transfer data to or from a server.
+```console
+kali@kali:~$ curl -o report_curl.pdf https://www.offensive-security.com/reports/data.pdf
+```
+### axel
+**axel** is a download accelerator that transfers a file from a FTP or HTTP server through multiple connections. **-n** the number of multiple connections, **-a** option for a more concise progress indicator and **-o** to specify a different file name.
+```console
+kali@kali:~$ axel -a -n 20 -o report_axel.pdf https://www.offensive-security.com/reports/data.pdf
 ```
