@@ -6,7 +6,12 @@
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
 ### locate
-The **locate** command is the quickest way to find the locations of files and directories. **locate** searches a built-in database named **locate.db** rather than the entire hard disk itself.
+The **locate** command is the quickest way to find the locations of files and directories. **locate** searches a built-in database named **locate.db** rather than the entire hard disk itself.To manually update the **locate.db** database, use the **updatedb** command
+```console
+kali@kali:~$ sudo updatedb
+kali@kali:~$ locate sbd.exe
+/usr/share/windows-resources/sbd/sbd.exe
+```
 ### find
 The **find** command is the most complex and flexible search tool. A recursive search starting from the root file system directory and look for any file that starts with the letters *sbd*.
 ```console
