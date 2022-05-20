@@ -1,6 +1,5 @@
 # Table of Contents
 1. [Getting Comfortable with Kali Linux](#Getting-Comfortable-with-Kali-Linux)
-
     1.1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
     - [which](#which)
     - [locate](#locate)
@@ -8,8 +7,13 @@
 
 2. [Command Line Fun](#Command-Line-Fun)    
     2.1. [The Bash Environment](#The-Bash-Environment)
-        2.1.1.
+    - [Environment Variables](#Environment-Variables)
+    - [Bash History Tricks](#Bash-History-Tricks)
     2.2. [Piping and Redirection](#Piping-and-Redirection)
+    - [Redirecting to a File](#Redirecting-to-a-File)
+    - [Redirecting from a File](#Redirecting-from-a-File)
+    - [Redirecting STDERR](#Redirecting-STDERR)
+    - [Piping](#Piping)
 
     2.3. [Text Searching and Manipulation](#Text-Searching-and-Manipulation)
 
