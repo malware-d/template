@@ -246,7 +246,7 @@ kali@kali:~$ unalias lsa
 kali@kali:~$ alias
 ```
 ### Persistent Bash Customization
-The behavior of interactive shells in Bash is determined by the system-wide **bashrc** file located in **/etc/bash.bashrc**. The system-wide Bash settings can be overridden by editing the **.bashrc** file located in any user's home directory. Set a **persistent alias** using **.bashrc**
+The behavior of interactive shells in Bash is determined by the system-wide **bashrc** file located in **/etc/bash.bashrc**. The system-wide Bash settings can be overridden by editing the **.bashrc** file located in any user's home directory. The **.bashrc** script is executed any time that user logs in Set a **persistent alias** using **.bashrc**
 ```console
 kali@kali:~$ nano ~/.bashrc
 ...
