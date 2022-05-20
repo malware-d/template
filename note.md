@@ -1,7 +1,7 @@
 # Table of Contents
 1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
 2. [The Bash Environment](#The-Bash-Environment)
-3. [Piping (**|**) and Redirection (< >)](#Piping-(**|**)-and-Redirection-(<->))
+3. [Piping and Redirection](#Piping-and-Redirection)
 ## Finding Files in Kali Linux
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
@@ -56,7 +56,7 @@ kali@kali:~$ !1
 cat /etc/lsb-release
 ```
 By default, the command history is saved to the **.bash_history** file in the user home directory. Two environment variables control the history size: *HISTSIZE* and *HISTFILESIZE*. *HISTSIZE* controls the number of commands stored in memory for the current session and *HISTFILESIZE* configures how many commands are kept in the history file. These variables can be edited according to our needs and saved to the Bash configuration file (**.bashrc**)
-## Piping (**|**) and Redirection (< >)
+## Piping and Redirection
 Every program run from the command line has three data streams connected to it that serve as communication channels with the external environment.
 
 | Stream Name              | Description                                   |
