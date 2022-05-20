@@ -3,6 +3,7 @@
 2. [The Bash Environment](#The-Bash-Environment)
 3. [Piping and Redirection](#Piping-and-Redirection)
 4. [Text Searching and Manipulation](#Text-Searching-and-Manipulation)
+5. [Managing Processes](#Managing-Processes)
 ## Finding Files in Kali Linux
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
@@ -143,4 +144,63 @@ kali@kali:~$ cut -d ":" -f 1 /etc/passwd
 root
 daemon
 bin
+```
+### awk
+**awk** is a programming language designed for text processing and is typically used as a data extraction and reporting tool. A commonly used switch with **awk** is **-F**, which is the field separator, and the **print** command, which outputs the result text.
+```console
+kali@kali:~$ echo "hello::there::friend" | awk -F "::" '{print $1, $3}'
+hello friend
+┌─[kimkhuongduy@drgon]─[~/Documents/Github/template]
+└──╼ $cat /etc/passwd | grep "/bin/false" | awk -F ":" '{print "the user " $1 " home directory is " $7}'
+the user tss home directory is /bin/false
+the user debian-tor home directory is /bin/false
+the user lightdm home directory is /bin/false
+the user vboxadd home directory is /bin/false
+```
+The most prominent difference between the **cut** and **awk** examples we used is that **cut** can only accept a single character as a field delimiter.
+## Managing Processes
+The Linux kernel manages multitasking through the use of processes. The kernel maintains information about each process to help keep things organized, and each process is assigned a number called a process ID (PID).
+### Backgrounding Processes (bg)
+Appending an **ampersand (&)** to the end of the command to send it to the background immediately after it starts.
+```console
+kali@kali:~$ ping -c 400 localhost > ping_results.txt &
+#or if we had forgotten to append &
+kali@kali:~$ ping -c 400 localhost > ping_results.txt
+^Z
+[1]+ Stopped ping -c 400 localhost > ping_results.txt
+kali@kali:~$ bg
+[1]+ ping -c 400 localhost > ping_results.txt
+kali@kali:~$
+```
+### Jobs Control: jobs and fg
+The built-in **jobs** utility lists the jobs that are running in the current terminal session, while **fg** returns a job to the foreground.
+```console
+kali@kali:~$ ping -c 400 localhost > ping_results.txt
+^Z
+[1]+ Stopped ping -c 400 localhost > ping_results.txt
+kali@kali:~$ find / -name sbd.exe
+^Z
+[2]+ Stopped find / -name sbd.exe
+kali@kali:~$ jobs
+[1]- Stopped ping -c 400 localhost > ping_results.txt
+[2]+ Stopped find / -name sbd.exe
+kali@kali:~$ fg %1
+ping -c 400 localhost > ping_results.txt
+^C
+kali@kali:~$ jobs
+[2]+ Stopped find / -name sbd.exe
+kali@kali:~$ fg
+find / -name sbd.exe
+/usr/share/windows-resources/sbd/sbd.exe
+```
+### Process Control: ps and kill
+**ps** - process status
+```console
+kali@kali:~$ ps -ef
+kali@kali:~$ ps -fC chrome
+#-e: select all processes, -f: display full format listing, -C: select by name
+```
+**kill** stops the process without interacting with the GUI. **kill**'s purpose is to send a specific signal to a process (default: SIGTERM -request termination).
+```console
+kali@kali:~$ kill 1307
 ```
