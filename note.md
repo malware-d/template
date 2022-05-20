@@ -2,12 +2,10 @@
 1. [Getting Comfortable with Kali Linux](#Getting-Comfortable-with-Kali-Linux)
 
     1.1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
-    
-        1.1.1 [which](#which)
+    - [which](#which)
+    - [locate](#locate)
+    - [find](#find)
 
-        1.1.2.[locate](#locate)
-
-        1.1.3.[find](#find)
 2. [Command Line Fun](#Command-Line-Fun)    
     2.1. [The Bash Environment](#The-Bash-Environment)
         2.1.1.
