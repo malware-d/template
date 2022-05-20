@@ -6,6 +6,7 @@
 5. [Managing Processes](#Managing-Processes)
 6. [File and Command Monitoring](#File-and-Command-Monitoring)
 7. [Downloading Files](#Downloading-Files)
+8. [Customizing the Bash Environment](#Customizing-the-Bash-Environment)
 ## Finding Files in Kali Linux
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
@@ -234,4 +235,23 @@ kali@kali:~$ curl -o report_curl.pdf https://www.offensive-security.com/reports/
 **axel** is a download accelerator that transfers a file from a FTP or HTTP server through multiple connections. **-n** the number of multiple connections, **-a** option for a more concise progress indicator and **-o** to specify a different file name.
 ```console
 kali@kali:~$ axel -a -n 20 -o report_axel.pdf https://www.offensive-security.com/reports/data.pdf
+```
+## Customizing the Bash Environment
+### Alias
+An **alias** is a string we can define that replaces a command name, a command that we define ourselves, built from other commands. The **alias** command does not have any restrictions on the words used for an alias.
+```console
+#alias for the current terminal session
+kali@kali:~$ alias lsa='ls -la'
+kali@kali:~$ unalias lsa
+kali@kali:~$ alias
+```
+### Persistent Bash Customization
+The behavior of interactive shells in Bash is determined by the system-wide **bashrc** file located in **/etc/bash.bashrc**. The system-wide Bash settings can be overridden by editing the **.bashrc** file located in any user's home directory. Set a **persistent alias** using **.bashrc**
+```console
+kali@kali:~$ nano ~/.bashrc
+...
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -
+    alias ls='ls --color=auto'
 ```
