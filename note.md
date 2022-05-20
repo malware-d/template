@@ -9,6 +9,7 @@
     2.1. [The Bash Environment](#The-Bash-Environment)
     - [Environment Variables](#Environment-Variables)
     - [Bash History Tricks](#Bash-History-Tricks)
+    
     2.2. [Piping and Redirection](#Piping-and-Redirection)
     - [Redirecting to a File](#Redirecting-to-a-File)
     - [Redirecting from a File](#Redirecting-from-a-File)
