@@ -1,15 +1,17 @@
 # Table of Contents
 1. [Getting Comfortable with Kali Linux](#Getting-Comfortable-with-Kali-Linux)
+
     1.1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
     - [which](#which)
     - [locate](#locate)
     - [find](#find)
 
-2. [Command Line Fun](#Command-Line-Fun)    
+2. [Command Line Fun](#Command-Line-Fun)   
+
     2.1. [The Bash Environment](#The-Bash-Environment)
     - [Environment Variables](#Environment-Variables)
     - [Bash History Tricks](#Bash-History-Tricks)
-    
+
     2.2. [Piping and Redirection](#Piping-and-Redirection)
     - [Redirecting to a File](#Redirecting-to-a-File)
     - [Redirecting from a File](#Redirecting-from-a-File)
@@ -17,14 +19,28 @@
     - [Piping](#Piping)
 
     2.3. [Text Searching and Manipulation](#Text-Searching-and-Manipulation)
+    - [grep](#grep)
+    - [sed](#sed)
+    - [cut](#cut)
+    - [awk](#awk)
 
     2.4. [Managing Processes](#Managing-Processes)
+    - [Backgrounding Processes (bg)](Backgrounding-Processes-(bg))
+    - [Jobs Control: jobs and fg](#Jobs-Control:-jobs-and-fg)
+    - [Process Control: ps and kill](#Process-Control:-ps-and-kill)
 
     2.5. [File and Command Monitoring](#File-and-Command-Monitoring)
+    - [tail >< head](#tail-><-head)
+    - [watch](#watch)
 
     2.6. [Downloading Files](#Downloading-Files)
+    - [wget](#wget)
+    - [curl](#curl)
+    - [axel](#axel)
 
     2.7. [Customizing the Bash Environment](#Customizing-the-Bash-Environment)
+    - [alias](#alias)
+    - [Persistent Bash Customization](#Persistent-Bash-Customization)
 3. [Practical Tools](#Practical-Tools)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
