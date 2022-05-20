@@ -1,3 +1,7 @@
+# Table of Contents
+1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
+2. [The Bash Environment](#The-Bash-Environment)
+3. [Piping and Redirection](#Piping-and-Redirection)
 ## Finding Files in Kali Linux
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
