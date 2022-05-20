@@ -150,8 +150,7 @@ bin
 ```console
 kali@kali:~$ echo "hello::there::friend" | awk -F "::" '{print $1, $3}'
 hello friend
-┌─[kimkhuongduy@drgon]─[~/Documents/Github/template]
-└──╼ $cat /etc/passwd | grep "/bin/false" | awk -F ":" '{print "the user " $1 " home directory is " $7}'
+kali@kali:~$ cat /etc/passwd | grep "/bin/false" | awk -F ":" '{print "the user " $1 " home directory is " $7}'
 the user tss home directory is /bin/false
 the user debian-tor home directory is /bin/false
 the user lightdm home directory is /bin/false
