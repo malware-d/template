@@ -1,12 +1,16 @@
 # Table of Contents
-1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
-2. [The Bash Environment](#The-Bash-Environment)
-3. [Piping and Redirection](#Piping-and-Redirection)
-4. [Text Searching and Manipulation](#Text-Searching-and-Manipulation)
-5. [Managing Processes](#Managing-Processes)
-6. [File and Command Monitoring](#File-and-Command-Monitoring)
-7. [Downloading Files](#Downloading-Files)
-8. [Customizing the Bash Environment](#Customizing-the-Bash-Environment)
+1. [Getting Comfortable with Kali Linux](#Getting-Comfortable-with-Kali-Linux)
+    1.1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
+2. [Command Line Fun](#Command-Line-Fun)    
+    2.1. [The Bash Environment](#The-Bash-Environment)
+    2.2. [Piping and Redirection](#Piping-and-Redirection)
+    2.3. [Text Searching and Manipulation](#Text-Searching-and-Manipulation)
+    2.4. [Managing Processes](#Managing-Processes)
+    2.5. [File and Command Monitoring](#File-and-Command-Monitoring)
+    2.6. [Downloading Files](#Downloading-Files)
+    2.7. [Customizing the Bash Environment](#Customizing-the-Bash-Environment)
+3. [Practical Tools](#Practical-Tools)
+# Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
@@ -26,6 +30,7 @@ kali@kali:~$ sudo find / -name sbd*
 /usr/share/windows-resources/sbd
 ```
 The main advantage of **find** over **locate** is that it can search for files and directories by more than just the name. With **find**, we can search by file age, size, owner, file type, timestamp permissions, and more.
+# Command Line Fun
 ## The Bash Environment
 Bash is an sh-compatible shell that allows us to run complex commands and perform different tasks from a terminal window. It incorporates useful features from both the **KornShell (ksh)** and **C shell (csh)**.
 ### Environment Variables
@@ -255,3 +260,4 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -
     alias ls='ls --color=auto'
 ```
+# Practical Tools
