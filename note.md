@@ -101,6 +101,7 @@ ls: cannot access '/test': No such file or directory
 Note that **error.txt** only contains the error message (generated on STDERR). We did this by prepending the stream number to the **>** operator (2=STDERR).
 
 File descriptor
+
 `/dev/null` - usually used to store garbage data from input streams when we don't want to process or display it.
 - `>/dev/null`: redirect all standard output to `/dev/null` . Equivalent of writing `1>/dev/null`
 - `2>&1`: redirect all standard errors to standard output
