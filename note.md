@@ -25,9 +25,9 @@
     - [awk](#awk)
 
     2.4. [Managing Processes](#Managing-Processes)
-    - [Backgrounding Processes (bg)](Backgrounding-Processes-(bg))
-    - [Jobs Control: jobs and fg](#Jobs-Control:-jobs-and-fg)
-    - [Process Control: ps and kill](#Process-Control:-ps-and-kill)
+    - [Backgrounding Processes](Backgrounding-Processes)
+    - [Jobs Control jobs and fg](#Jobs-Control-jobs-and-fg)
+    - [Process Control ps and kill](#Process-Control-ps-and-kill)
 
     2.5. [File and Command Monitoring](#File-and-Command-Monitoring)
     - [tail >< head](#tail-><-head)
