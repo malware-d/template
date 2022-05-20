@@ -6,7 +6,7 @@
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
 ### locate
-The **locate** command is the quickest way to find the locations of files and directories. **locate** searches a built-in database named **locate.db** rather than the entire hard disk itself.To manually update the **locate.db** database, use the **updatedb** command
+The **locate** command is the quickest way to find the locations of files and directories. **locate** searches a built-in database named **locate.db** rather than the entire hard disk itself. To manually update the **locate.db** database, use the **updatedb** command
 ```console
 kali@kali:~$ sudo updatedb
 kali@kali:~$ locate sbd.exe
@@ -98,6 +98,23 @@ kali@kali:~$ ls ./test 2>error.txt
 kali@kali:~$ cat error.txt
 ls: cannot access '/test': No such file or directory
 ```
-Note that **error.txt** only contains the error message (generated on STDERR). We did this by prepending the stream number to the **>** operator (2=STDERR)
+Note that **error.txt** only contains the error message (generated on STDERR). We did this by prepending the stream number to the **>** operator (2=STDERR).
+
+File descriptor
+`/dev/null` - usually used to store garbage data from input streams when we don't want to process or display it.
+- `>/dev/null`: redirect all standard output to `/dev/null` . Equivalent of writing `1>/dev/null`
+- `2>&1`: redirect all standard errors to standard output
+```console
+#Do not display the error on the screen
+kali@kali:~$ find / -name '*duycvp.net*' 2>/dev/null
+#Move error message to file
+kali@kali:~$ cat khongtontai.txt 2> error.txt
+kali@kali:~$ cat error.txt
+cat: khongtontai.txt: No such file or directory
+#Error message not handled by grep
+kali@kali:~$ find / -name '*duy*' | grep 'kim'
+#Grep handle the whole
+kali@kali:~$ find / -name '*duy*' 2>&1 | grep 'kim'
+```
 ### Piping
 How to redirect the output from one command into the input of another.
