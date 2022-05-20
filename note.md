@@ -135,10 +135,9 @@ I need to try harder
 ```
 Note that by default the output has been automatically redirected to the standard output.
 ### cut
-**cut**is used to extract a section of text from a line and output it to the standard output. Some of the most commonly-used switches include **-f** for the field number we are cutting and **-d** for the field delimiter.
+**cut** is used to extract a section of text from a line and output it to the standard output. Some of the most commonly-used switches include **-f** for the field number we are cutting and **-d** for the field delimiter.
 ```console
-kali@kali:~$ echo "I hack binaries,web apps,mobile apps, and just about anything else"
-| cut -f 2 -d ","
+kali@kali:~$ echo "I hack binaries,web apps,mobile apps, and just about anything else" | cut -f 2 -d ","
 web apps
 kali@kali:~$ cut -d ":" -f 1 /etc/passwd
 root
