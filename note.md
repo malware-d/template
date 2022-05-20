@@ -2,9 +2,14 @@
 1. [Getting Comfortable with Kali Linux](#Getting-Comfortable-with-Kali-Linux)
 
     1.1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
+        1.1.1 [which](#which)
+
+        1.1.2.[locate](#locate)
+        
+        1.1.3.[find](#find)
 2. [Command Line Fun](#Command-Line-Fun)    
     2.1. [The Bash Environment](#The-Bash-Environment)
-
+        2.1.1.
     2.2. [Piping and Redirection](#Piping-and-Redirection)
 
     2.3. [Text Searching and Manipulation](#Text-Searching-and-Manipulation)
@@ -14,7 +19,7 @@
     2.5. [File and Command Monitoring](#File-and-Command-Monitoring)
 
     2.6. [Downloading Files](#Downloading-Files)
-    
+
     2.7. [Customizing the Bash Environment](#Customizing-the-Bash-Environment)
 3. [Practical Tools](#Practical-Tools)
 # Getting Comfortable with Kali Linux
