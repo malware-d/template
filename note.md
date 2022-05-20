@@ -199,7 +199,7 @@ the user vboxadd home directory is /bin/false
 The most prominent difference between the **cut** and **awk** examples we used is that **cut** can only accept a single character as a field delimiter.
 ## Managing Processes
 The Linux kernel manages multitasking through the use of processes. The kernel maintains information about each process to help keep things organized, and each process is assigned a number called a process ID (PID).
-### Backgrounding Processes (bg)
+### Backgrounding Processes
 Appending an **ampersand (&)** to the end of the command to send it to the background immediately after it starts.
 ```console
 kali@kali:~$ ping -c 400 localhost > ping_results.txt &
