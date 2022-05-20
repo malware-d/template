@@ -2,6 +2,7 @@
 1. [Finding Files in Kali Linux](#Finding-Files-in-Kali-Linux)
 2. [The Bash Environment](#The-Bash-Environment)
 3. [Piping and Redirection](#Piping-and-Redirection)
+4. [Text Searching and Manipulation](#Text-Searching-and-Manipulation)
 ## Finding Files in Kali Linux
 ### which 
 The **which** command searches through the directories that are defined in the **$PATH** environment variable for a given file name. **which** returns the full path to the file.
@@ -119,3 +120,28 @@ kali@kali:~$ find / -name '*duy*' 2>&1 | grep 'kim'
 ```
 ### Piping
 How to redirect the output from one command into the input of another.
+## Text Searching and Manipulation
+### grep
+**grep** searches text files for the occurrence of a given regular expression and outputs any line containing a match to the standard output.
+```console
+kali@kali:~$ cat config.ini | grep "password" -C 2
+#-r for recursive searching, -i to ignore text case,..
+```
+### sed
+**sed** is a powerful stream editor.
+```console
+kali@kali:~$ echo "I need to try hard" | sed 's/hard/harder/'
+I need to try harder
+```
+Note that by default the output has been automatically redirected to the standard output.
+### cut
+**cut**is used to extract a section of text from a line and output it to the standard output. Some of the most commonly-used switches include **-f** for the field number we are cutting and **-d** for the field delimiter.
+```console
+kali@kali:~$ echo "I hack binaries,web apps,mobile apps, and just about anything else"
+| cut -f 2 -d ","
+web apps
+kali@kali:~$ cut -d ":" -f 1 /etc/passwd
+root
+daemon
+bin
+```
