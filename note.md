@@ -48,6 +48,7 @@
     - [Remote Administration with Netcat](#Remote-Administration-with-Netcat)
         - [Netcat Bind Shell Scenario](#Netcat-Bind-Shell-Scenario)
         - [Reverse Shell Scenario](#Reverse-Shell-Scenario)
+        
     3.2. [socat](#socat)
     - [Transferring Files with Socat](#Transferring-Files-with-Socat)
     - [Socat Reverse Shells](#Socat-Reverse-Shells)
