@@ -54,7 +54,7 @@
     - [Socat Reverse Shells](#Socat-Reverse-Shells)
     - [Socat Encrypted Bind Shells](#Socat-Encrypted-Bind-Shells)
 
-    3.3. [PowerShell and Powercat](#PowerShell-and-Powercat)
+    3.3. [PowerShell](#PowerShell)
     - [PowerShell File Transfers](#PowerShell-File-Transfers)
     - [PowerShell Reverse Shells](#PowerShell-Reverse-Shells)
     - [PowerShell Bind Shells](#PowerShell-Bind-Shells)
