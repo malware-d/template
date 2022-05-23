@@ -298,6 +298,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 ```
 # Practical Tools
+
 ## netcat
 ### Transferring Files with Netcat
 Netcat can be used to transfer files, both text and binary. Forensics investigators often use Netcat in conjunction with **dd** (a disk copying utility) to create forensically sound disk images over a network.
