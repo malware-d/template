@@ -42,6 +42,7 @@
     - [alias](#alias)
     - [Persistent Bash Customization](#Persistent-Bash-Customization)
 3. [Practical Tools](#Practical-Tools)
+
     3.1. [netcat](#netcat)
     - [Transferring Files with Netcat](#Transferring-Files-with-Netcat)
     - [Remote Administration with Netcat](#Remote-Administration-with-Netcat)
@@ -298,7 +299,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 ```
 # Practical Tools
-
 ## netcat
 ### Transferring Files with Netcat
 Netcat can be used to transfer files, both text and binary. Forensics investigators often use Netcat in conjunction with **dd** (a disk copying utility) to create forensically sound disk images over a network.
@@ -324,6 +324,7 @@ kali@kali:~$ nc -nv 10.11.0.22 4444
 ```
 #### Reverse Shell Scenario
 *the ability to send a command shell of **netcat***
+
 Alice has no control over the router in her office, and therefore cannot forward traffic from the router to her internal machine. Alice cannot bind a port to **/bin/bash** locally on her computer but she can send control of her command prompt to Bob's machine instead. 
 ```console
 #Bob - 10.11.0.22
