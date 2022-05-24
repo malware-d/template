@@ -72,6 +72,16 @@
 
     4.5. [Email Harvesting](#Email-Harvesting)
 5. [Active Information Gathering](#Active-Information-Gathering)
+    5.1. [DNS](#DNS)
+    - [Forward Lookup Brute Force](#Forward-Lookup-Brute-Force)
+    - [Reverse Lookup Brute Force](#Reverse-Lookup-Brute-Force)
+    5.2. [SMB](#SMB)
+
+    5.3. [NFS](#NFS)
+
+    5.4. [SMTP](#SMTP)
+
+    5.5. [SNMP](#SNMP)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
@@ -464,6 +474,22 @@ Determine the operating system and tools used to build a site [https://searchdns
 ## Email Harvesting
 Simply Email [https://github.com/killswitch-GUI/SimplyEmail.git](https://github.com/SimplySecurity/SimplyEmail)
 # Active Information Gathering
-
-
+*explore techniques that involve direct interaction with target services*s
+## DNS
+```console
+#find the IP address. By default, host looks for an A record. -t option: specify the type of record
+kali@kali:~$ host www.megacorpone.com
+www.megacorpone.com has address 38.100.193.76
+kali@kali:~$ host -t ns megacorpone.com
+```
+### Forward Lookup Brute Force
+```console
+kali@kali:~$ for ip in $(cat list.txt); do host $ip.megacorpone.com; done
+```
+[seclists-DNS](https://github.com/danielmiessler/SecLists/tree/master/Discovery/DNS)
+### Reverse Lookup Brute Force
+```console
+#-v option: select non-matching lines
+kali@kali:~$ for ip in $(seq 50 100); do host 38.100.193.$ip; done | grep -v "not found"
+```
 
