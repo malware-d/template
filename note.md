@@ -75,6 +75,7 @@
     5.1. [DNS](#DNS)
     - [Forward Lookup Brute Force](#Forward-Lookup-Brute-Force)
     - [Reverse Lookup Brute Force](#Reverse-Lookup-Brute-Force)
+    
     5.2. [SMB](#SMB)
 
     5.3. [NFS](#NFS)
