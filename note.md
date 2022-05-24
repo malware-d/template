@@ -63,9 +63,13 @@
 4. [Passive Information Gathering](#Passive-Information-Gathering)
 
     4.1. [Whois Enumeration](#Whois-Enumeration)
+
     4.2. [Google Hacking](#Google-Hacking)
+
     4.3. [Netcraft](#Netcraft)
+
     4.4. [SSL Certificate Testing](https://www.ssllabs.com/ssltest/analyze.html)
+
     4.5. [Email Harvesting](#Email-Harvesting)
 5. [Active Information Gathering](#Active-Information-Gathering)
 # Getting Comfortable with Kali Linux
