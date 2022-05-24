@@ -76,14 +76,8 @@
     5.1. [DNS](#DNS)
     - [Forward Lookup Brute Force](#Forward-Lookup-Brute-Force)
     - [Reverse Lookup Brute Force](#Reverse-Lookup-Brute-Force)
-
-    5.2. [SMB](#SMB)
-
-    5.3. [NFS](#NFS)
-
-    5.4. [SMTP](#SMTP)
-
-    5.5. [SNMP](#SNMP)
+    - [DNSRecon](#DNSRecon)
+    - [DNSEnum](#DNSEnum)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
@@ -483,6 +477,12 @@ Simply Email [https://github.com/killswitch-GUI/SimplyEmail.git](https://github.
 kali@kali:~$ host www.megacorpone.com
 www.megacorpone.com has address 38.100.193.76
 kali@kali:~$ host -t ns megacorpone.com
+#Perform DNS IP Lookup
+kali@kali:~$ dig a domain-name-here.com @nameserver
+#Perform MX Record Lookup
+kali@kali:~$ dig mx domain-name-here.com @nameserver
+#Perform Zone Transfer with DIG
+kali@kali:~$ dig axfr domain-name-here.com @nameserver
 ```
 ### Forward Lookup Brute Force
 ```console
@@ -494,4 +494,14 @@ kali@kali:~$ for ip in $(cat list.txt); do host $ip.megacorpone.com; done
 #-v option: select non-matching lines
 kali@kali:~$ for ip in $(seq 50 100); do host 38.100.193.$ip; done | grep -v "not found"
 ```
-
+### DNSRecon
+```console
+kali@kali:~$ dnsrecon -d megacorpone.com -t axfr
+#brute-force: -t brt: bruteforce
+kali@kali:~$ dnsrecon -d megacorpone.com -D ~/list.txt -t brt
+```
+### DNSEnum
+```console
+kali@kali:~$ dnsenum zonetransfer.me
+```
+ 
