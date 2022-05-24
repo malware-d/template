@@ -60,6 +60,14 @@
     - [PowerShell Bind Shells](#PowerShell-Bind-Shells)
 
     3.4. [tcpdump](#tcpdump)
+4. [Passive Information Gathering](#Passive-Information-Gathering)
+
+    4.1. [Whois Enumeration](#Whois-Enumeration)
+    4.2. [Google Hacking](#Google-Hacking)
+    4.3. [Netcraft](#Netcraft)
+    4.4. [SSL Certificate Testing](https://www.ssllabs.com/ssltest/analyze.html)
+    4.5. [Email Harvesting](#Email-Harvesting)
+5. [Active Information Gathering](#Active-Information-Gathering)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
@@ -432,7 +440,26 @@ kali@kali:~$ sudo tcpdump -n -r password_cracking_filtered.pcap | awk -F" " '{pr
 #Grab a packet capture on port 80
 kali@kali:~$ tcpdump tcp port 80 -w output.pcap -i eth0
 ```
-
+# Passive Information Gathering
+## Whois Enumeration
+**whois** is a TCP service, tool, and a type of database that can provide information about a domain name, such as the *name server* and *registrar*. This information is often public since registrars charge a fee for private registration.
+```console
+kali@kali:~$ whois domain-name-here.com 
+kali@kali:~$ whois $ip
+```
+## Google Hacking
+- Google search to find website sub domains
+`site:microsoft.com`
+- Google filetype
+`site:megacorpone.com filetype:php` 
+and using **`-`** to exclude particular items from a search `site:megacorpone.com -filetype:html`
+- Google Hacking Database
+[https://www.exploit-db.com/google-hacking-database/](https://www.exploit-db.com/google-hacking-database)
+## Netcraft
+Determine the operating system and tools used to build a site [https://searchdns.netcraft.com/](https://searchdns.netcraft.com/)
+## Email Harvesting
+Simply Email [https://github.com/killswitch-GUI/SimplyEmail.git](https://github.com/SimplySecurity/SimplyEmail)
+# Active Information Gathering
 
 
 
