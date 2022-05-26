@@ -78,6 +78,7 @@
     - [Reverse Lookup Brute Force](#Reverse-Lookup-Brute-Force)
     - [DNSRecon](#DNSRecon)
     - [DNSEnum](#DNSEnum)
+    5.2. [NFS](#NFS)
 # Getting Comfortable with Kali Linux
 ## Finding Files in Kali Linux
 ### which 
@@ -504,4 +505,26 @@ kali@kali:~$ dnsrecon -d megacorpone.com -D ~/list.txt -t brt
 ```console
 kali@kali:~$ dnsenum zonetransfer.me
 ```
- 
+## NFS
+Network File System allows a user on a client computer to access files over a computer network as if they were on locally-mounted storage. NFS is predominantly insecure in its implementation.
+
+Scanning for NFS Shares
+```console
+#identify hosts that have portmapper/rpcbind running
+kali@kali:~$ nmap -v -p 111 10.10.10.123
+kali@kali:~$ nmap -sV -p 111 --script=rpcinfo 10.11.1.1-254
+Nmap scan report for 10.11.1.72
+Host is up (0.0055s latency).
+PORT STATE SERVICE VERSION
+111/tcp open rpcbind 2-4 (RPC #100000)
+```
+Nmap NFS NSE Scripts
+```console
+kali@kali:~$ ls -1 /usr/share/nmap/scripts/nfs*
+kali@kali:~$ nmap -p 111 --script nfs* 10.11.1.72
+```
+Mount 
+```console
+kali@kali:~$ mkdir NFS
+kali@kali:~$ sudo mount -o nolock 10.11.1.72:/share /home/kimkhuongduy/Desktop/NFS
+```
