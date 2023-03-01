@@ -207,7 +207,7 @@ kali@kali:~$ cat config.ini | grep "password" -C 2
 ```
 - -r : recursive searching
 - -i : ignore text case
-- -v : invert-match search
+- -v : invert-match search (the lines that match the specified pattern will be excluded from the output)
 ### sed
 **sed** is a powerful stream editor.
 ```console
