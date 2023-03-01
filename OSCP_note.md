@@ -204,8 +204,10 @@ How to redirect the output from one command into the input of another.
 **grep** searches text files for the occurrence of a given regular expression and outputs any line containing a match to the standard output.
 ```console
 kali@kali:~$ cat config.ini | grep "password" -C 2
-#-r for recursive searching, -i to ignore text case,..
 ```
+- -r : recursive searching
+- -i : ignore text case
+- -v : invert-match search
 ### sed
 **sed** is a powerful stream editor.
 ```console
