@@ -33,7 +33,7 @@ SQL - Structure Query Language: quy định quy tắc, cú pháp để user vi�
 + Tạo mới: CREATE DATABASE _nameDatabase; 
 + Xoá: DROP DATABASE _nameDatabase;
 + Sửa: ALTER DATABASE _nameDatabase;  
-```SQL
+```postgresql
 #list 
 postgres=# \l
 
