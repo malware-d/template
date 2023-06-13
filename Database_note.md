@@ -18,3 +18,35 @@ Nên đối với bài toán Big data chúng ta sẽ phải cần đến hệ th
 + Non-relational DB: cơ sở dữ liệu phi quan hệ
 
 > Các dữ liệu được tổ chức theo dạng Document, trái ngược với dạng bảng bên trên.  *Ví dụ: MongoDB, Redis* 
+
+## Relational Database
+Row ~ Record
+
+Primary key ~ ID: dùng để phân biệt các record với nhau
+
+SQL - Structure Query Language: quy định quy tắc, cú pháp để user viết các lệnh nhằm tương tác, giao tiếp với database. 
+
+> SQL đuọc tính là ngôn ngữ lập trình, thuộc nhóm *Scripting language* 👉 tức là bản thân nó sẽ cần đến trình thông dịch Interpreter 
+
+## Base Command
+
++ Tạo mới: CREATE DATABASE _nameDatabase; 
++ Xoá: DROP DATABASE _nameDatabase;
++ Sửa: ALTER DATABASE _nameDatabase;  
+```SQL
+#list 
+postgres=# \l
+
+#change to other DB (c: connect)      
+postgres=# \c database2
+You are now connected to database "database2" as user "postgres"
+database2=#
+
+#change name of DB
+postgres=# ALTER DATABASE database2 RENAME TO database3; 
+
+#delete DB
+postgres=# DROP DATABASE database3;
+```
+
+
