@@ -30,12 +30,16 @@ SQL - Structure Query Language: quy định quy tắc, cú pháp để user vi�
 
 ## Base Command
 
+### Database
 + Tạo mới: CREATE DATABASE _nameDatabase; 
 + Xoá: DROP DATABASE _nameDatabase;
 + Sửa: ALTER DATABASE _nameDatabase;  
-```postgresql
+```SQL
 #list 
 postgres=# \l
+
+#describe table  
+postgres=# \dt
 
 #change to other DB (c: connect)      
 postgres=# \c database2
@@ -48,5 +52,40 @@ postgres=# ALTER DATABASE database2 RENAME TO database3;
 #delete DB
 postgres=# DROP DATABASE database3;
 ```
+
+### Table 
+Name of database: DB1
+```SQL
+#describe table (list of relations)
+DB1=# \dt
+
+#structure of table (có cột nào, ràng buộc gì, key ntn?)
+DB1=# \d idols
+or
+DB1=# SELECT * FROM idols;
+```
+#### Interacting with table (Query tool)
+```SQL
+#createTable
+CREATE TABLE idols(
+    id integer NOT NULL PRIMARY KEY,
+    name text NOT NULL,
+    age integer,
+    nb_of_movies integer DEFAULT 1
+)
+
+#deleteTale
+DROP TABLE idols;
+
+#insertData INSERT INTO _nameTable(_nameColums) VALUES(_values)
+INSERT INTO idols(name, id, age) VALUES('QuangHai', 19, 24)
+
+#many record together
+INSERT INTO idols(name, id, age) 
+VALUES      ('QuangHai', 19, 24),
+            ('CongPhung', 10, 26),
+            ('Ronalsi', 7, 66)
+```
+
 
 
