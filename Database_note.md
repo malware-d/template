@@ -248,7 +248,8 @@ SELECT * FROM idols LIMIT 3
 ## Ràng buộc - CONSTRAINT
 Là những quy tắc, rules mà chúng ta tạo ra để áp đặt lên data (data ở đây có thể là cả Table, hoặc từng Columns)
 
-👉 Mục đích là để tránh được những dữ liệu không hợp lệ được nhập vào DB
+️🥊 Mục đích là để tránh được những dữ liệu không hợp lệ được nhập vào DB
+> hạn chế thay đổi CONSTRAINT trên 1 table đã có vì có thể sẽ gây lỗi với những dữ liệu cũ, vậy nên cần thiết kế thật chuẩn xác trước khi bắt đầu triển khai.
 
 Liệt kê các CONSTRAINT vào ngay đằng sau data type
 ```SQL
@@ -266,3 +267,40 @@ ALTER COLUMN title DROP NOT NULL
 ALTER TABLE movies
 ALTER COLUMN title SET NOT NULL
 ```
+👉 **UNIQUE** được áp đặt cho các Columns, và nó sẽ quy định cho các dữ liệu trong Columns đó không được phép trùng nhau 
+```SQL
+CREATE TABLE movies (
+    id INT PRIMARY KEY,
+    title TEXT NOT NULL UNIQUE
+)
+```
+👉 **PRIMARY KEY** là một CONSTRAINT rất quan trọng, bắt buộc phải thiết lập khi tạo Table. Nó đảm bảo tính duy nhất của các record (row) có trong DB 
+
+🆘 Mỗi một Table đều phải có **PRIMARY KEY**. Khá giống với UNIQUE, nhưng UNIQUE là áp trên 1 column, còn PRIMARY KEY thì đảm bảo tính duy nhất của các Rows với nhau và áp dụng cho toàn Table.
+> Có thể thiết lập nhiều PRIMARY KEY cho một Table, nhưng thông thường chỉ nên chọn duy nhất 1 cái
+```SQL
+CREATE TABLE movies (
+    id INT PRIMARY KEY,         //PRIMARY KEY ~ NOT NULL + UNIQUE
+    title TEXT NOT NULL UNIQUE
+)
+```
+👉 **FOREIGN KEY** được áp đặt cho một column, có quy định tính UNIQUE và đồng thời quy định rằng: *column này chỉ được phép chứa PRIMARY KEY của một Table khác.* 
+
+Giữa những Table có liên quan đến nhau thì chúng có thể lưu KEY của nhau, bảng này lưu KEY của bảng kia.
+```SQL
+CREATE TABLE movies (
+    id INT PRIMARY KEY,
+    title TEXT,
+    idol_id INT REFERENCES idols(id)        //_nameColumn INT REFERENCES _nameTable(PRIMARY KEY)
+)
+```
+👉 **CHECK** áp đặt cho Column để đảm bảo dữ liệu của nó phải thoả mãn một biểu thức LOGIC nào đấy. 
+```SQL
+CREATE TABLE movies (
+    id INT PRIMARY KEY,
+    title TEXT CHECK (LENGTH(title) >= 5),
+    idol_id INT REFERENCES idols(id)  
+)
+```
+
+> NOTE: Tên của Column bản chất như tên của Biến, Column ~ Biến, giá trị thay đổi theo các Row
