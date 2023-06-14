@@ -64,8 +64,9 @@ DB1=# \d idols
 or
 DB1=# SELECT * FROM idols;
 ```
-#### Interacting with table (Query tool)
+#### Interacting with table (Query tool) 😈 SQL command
 ```SQL
+🔴#thay đổi DATA của Table
 #createTable
 CREATE TABLE idols(
     id integer NOT NULL PRIMARY KEY,
@@ -101,6 +102,19 @@ SELECT 1 + 2 AS tong, name FROM idols
 UPDATE idols SET nb_of_movies = 50, age = 29 WHERE id = 3       //WHERE clause thì ❗phải chọn PRIMARY KEY❗
 
 DELETE FROM idols WHERE id = 3
+
+🔴#thay đổi STRUCTURE của Table (tên colume, data type,...)
+ALTER TABLE idols
+ADD COLUMN birthday DATE NOT NULL DEFAULT '2000-01-01',          // gọi là 1 action
+ADD COLUMN gender BOOL
+
+ALTER TABLE idols
+RENAME COLUMN gender TO sex     //rename Colums
+RENAME TO idol                  //rename Table
+
+
+ALTER TABLE idols
+DROP COLUMN sex
 ```
 
 
