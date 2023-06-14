@@ -138,6 +138,131 @@ Toán hạng có thể là 1 trong 3 trường hợp: **giá trị đơn, Column
 SELECT 1 + id FROM idols                //gt đơn + Column
 SELECT id + age FROM idols              //Column + Column
 SELECT EXISTS (SELECT * FROM idols)     //EXISTS là toán tử dạng Keyword, toán hạng của nó là 1 câu lệnh SQL khác 🆘 Keyword ~ Function 👉 EXISTS dùng để kt xem câu lệnh đó có trả về giá trị gì hay là không?
+
+#toán tử BETWEEN thường được sử dụng để filter
+SELECT name FROM idols WHERE age NOT BETWEEN 24 AND 29
+```
+Phép toán so sánh đặc biệt dành cho những giá trị đặc biệt không thể so sánh được. Vị dụ, cần so sánh gt để biết giá trị có đang **rỗng
+** hay không
+```SQL
+❌SELECT name, age FROM idols WHERE nb_movies != NULL❌
+
+👇
+
+SELECT name, age FROM idols WHERE nb_movies IS NOT NULL
+#vậy nên != chỉ được sử dụng để so sánh với các giá trị cụ thể
+```
+Làm việc với chuỗi ký tự
+```SQL
+#độ dài chuỗi 🔑 Toán tử dưới dạng Function
+SELECT LENGTH('Kim Khuong Duy')
+
+#nối chuỗi
+SELECT 'Kim Khuong Duy' || '1997'       //concatenate
+SELECT 'Kim Khuong Duy' || 1997         //text + int
+SELECT name || age FROM idols           //column + column
+
+#tách chuỗi
+SELECT SUBSTRING('Kim Khuong Duy', _startIndex, _sumChar)
+#⛔⛔⛔SQL đánh số từ 1 chứ không phải từ 0⛔⛔⛔
+
+#so sánh chuỗi LIKE (LIKE tương đương với toán tử ~~)
+LIKE: ~~
+NOT LIKE: !~~
+
+#with a Template
+SELECT 'abcd' LIKE 'a___'       //text LIKE template
+SELECT 'abcdf12344' LIKE 'ab%'       //ký tự '%' đại diện cho toàn bộ những ký tự còn lại, không cần phải dùng đủ số lượng ký tự dấu '_'
+SELECT 'abcdf12344' LIKE '%cd%'
+SELECT 'abcdf12344' LIKE '%44'
+SELECT 'abcdf12344' LIKE '%cd%44'
+```
+Aggregation - gộp
+```SQL
+SELECT MIN(age) FROM idols
+SELECT MAX(age) FROM idols
+SELECT SUM(age) FROM idols
+SELECT AVG(age) FROM idols
+SELECT COUNT(age) FROM idols
+```
+## Query data with Clause
+👉 Clause dùng để bổ sung thêm các điều kiện ràng buộc cho câu lệnh truy vấn 
+```SQL
+SELECT * FROM idols
+WHERE age BETWEEN 26 AND 29
+
+SELECT * FROM idols
+WHERE working               //data type of 'working' is boolean  
+
+UPDATE idols SET age = 28
+WHERE id = 3
+```
+👉 **GROUP BY** dùng để nhóm các bản ghi có dữ liệu trùng nhau ở một cột nào đó
+```SQL
+SELECT name FROM view_count GROUP BY name
+SELECT date FROM view_count GROUP BY date
+```
+️🥊 Lưu ý: ví dụ bên trên là nhóm cái nào thì select theo cái đó. Trong trường hợp nhóm theo 1 cột nhưng lại select theo cột khác thì những giá trị không chập được (những giá trị nằm ngoài mệnh đề GROUP BY) thì phải đưa chúng vào toán tử Gộp - Aggregation
+```SQL
+SELECT name, SUM(view_count) FROM view_count GROUP BY name
+```
+👉 Kết hợp với **WHERE**
+```SQL
+SELECT name, SUM(view_count) 
+FROM view_count 
+WHERE date > '2022-01-01'
+GROUP BY name
+```
+👉 Mệnh đề **HAVING** dùng để bổ trợ cho GROUP BY (đi sau GROUP BY). Hoạt động gần giống với WHERE. Điểm khác biệt ở chỗ: WHERE dùng để lọc dữ liệu từ table trong DB, còn HAVING lọc dữ liệu kết quả sau khi đã gộp row bằng GROUP BY. 
+```SQL
+SELECT name, SUM(view_count) 
+FROM view_count 
+GROUP BY name
+HAVING SUM(view_count) > 5       //đi sau HAVING sẽ là một điều kiện
+
+SELECT date, AVG(view_count) 
+FROM view_count 
+GROUP BY date
+HAVING AVG(view_count) <= 3      //đi sau HAVING sẽ là một điều kiện
+```
+👉 Sắp xếp dữ liệu trong Table bằng **ORDER BY**
++ ASC: Ascending - tăng dần
+
++ DESC: Descending - giảm dần
+```SQL
+#nếu không để mệnh đề ORDER BY thì mặc định sẽ là sắp xếp theo thứ tự tăng dần của PRIMARY KEY
+SELECT * FROM idols
+
+#giảm dần
+SELECT * FROM idols
+ORDER BY age DESC
+```
+> 🔴 **ORDER BY** đi sau **GROUP BY**, **GROUP BY** đi sau **WHERE** 
+
+👉 Mệnh đề **LIMIT** dùng để giới hạn số row mà chúng ta truy vấn ra từ table
+```SQL
+#phải đặt sau WHERE, GROUP BY, ORDER BY,... giống như kiểu là bước lọc cuối cùng
+SELECT * FROM idols LIMIT 3
 ```
 
+## Ràng buộc - CONSTRAINT
+Là những quy tắc, rules mà chúng ta tạo ra để áp đặt lên data (data ở đây có thể là cả Table, hoặc từng Columns)
 
+👉 Mục đích là để tránh được những dữ liệu không hợp lệ được nhập vào DB
+
+Liệt kê các CONSTRAINT vào ngay đằng sau data type
+```SQL
+#thiết lập CONSTRAINT vào sau data type (int)
+CREATE TABLE movies (
+    id INT NOT NULL,
+    title TEXT
+)
+
+#xoá CONSTRAINT
+ALTER TABLE movies
+ALTER COLUMN title DROP NOT NULL
+
+#bổ sung CONSTRAINT cho COLUMN đã có
+ALTER TABLE movies
+ALTER COLUMN title SET NOT NULL
+```
