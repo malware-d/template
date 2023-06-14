@@ -117,5 +117,27 @@ ALTER TABLE idols
 DROP COLUMN sex
 ```
 
+## Data Type
+> cast the exression: ép kiểu 
++ integer (INT)
++ numeric (DECIMAL)
++ serial - tự động tăng dần giá trị (STT, ID)   //bản chất là kiểu Integer
+```SQL
+ALTER TABLE idols ADD COLUMN weight DECIMAL
+```
++ boolean 
++ character (sử dụng khi muốn giới hạn số lượng ký tự cho data) >< Text (Unlimitted - ví dụ về 1 đoạn văn bản, tiểu sử cá nhân,...)
++ date (Y-M-D) - cách viết phổ biến, tiêu chuẩn quốc tế ISO 8601
++ time with time zone /without time zone
++ date range
++ interval
+
+## Operation + Expression
+Toán hạng có thể là 1 trong 3 trường hợp: **giá trị đơn, Column, 1 lệnh SQL khác**
+```SQL
+SELECT 1 + id FROM idols                //gt đơn + Column
+SELECT id + age FROM idols              //Column + Column
+SELECT EXISTS (SELECT * FROM idols)     //EXISTS là toán tử dạng Keyword, toán hạng của nó là 1 câu lệnh SQL khác 🆘 Keyword ~ Function 👉 EXISTS dùng để kt xem câu lệnh đó có trả về giá trị gì hay là không?
+```
 
 
