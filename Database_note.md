@@ -85,6 +85,22 @@ INSERT INTO idols(name, id, age)
 VALUES      ('QuangHai', 19, 24),
             ('CongPhung', 10, 26),
             ('Ronalsi', 7, 66)
+
+#readData SELECT _nameColum FROM _nameTable [_clauses]
+#thực chất chỉ SELECT mới được coi là dạng lệnh Query (Query trong SQL), còn lại là lệnh bt. SELECT không chỉ được dùng để đọc dữ liệu từ Table mà còn đọc các giá trị đơn lẻ, giống với print, echo.
+SELECT * FROM idols         //FROM cũng là mệnh đề
+SELECT id, name FROM idols
+
+#đổi tên cột khi hiển thị
+SELECT id AS i, name AS n FROM idols
+
+#đọc giá trị đơn 
+SELECT 1 + 2 AS tong, name FROM idols
+
+#updateTable (set&delete)
+UPDATE idols SET nb_of_movies = 50, age = 29 WHERE id = 3       //WHERE clause thì ❗phải chọn PRIMARY KEY❗
+
+DELETE FROM idols WHERE id = 3
 ```
 
 
