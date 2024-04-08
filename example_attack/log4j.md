@@ -90,8 +90,17 @@ Log4Shell (CVE-2021-44228) liên quan đến lỗ hổng bảo mật trong thư 
 
 Mục tiêu cần tìm ra những entry point có tiềm năng (log lại dữ liệu sau khi người dùng thực hiện truy vấn tại những entry point này)
 
+Thực hiện enumeration trên webserver tại địa chỉ http://192.168.2.44:8983
 
 
+
+https://cehvietnam.com/2021/12/26/huong-dan-thiet-lap-mo-hinh-lab-de-kiem-tra-tham-nhap-log4/
+
+https://github.com/Kyuu-Ji/htb-write-up/blob/master/logforge/write-up-logforge.md
+
+https://0xdf.gitlab.io/2021/12/29/htb-logforge.html
+
+https://bherunda.medium.com/using-java-deserialization-to-exploit-log4shell-logforge-htb-25b9486e90b6
 
 
 
