@@ -1,7 +1,19 @@
 # Cyber Kill Chain
 1. [Vấn đề an ninh an toàn mạng tổ chức](#Vấn-đề-an-ninh-an-toàn-mạng-tổ-chức)
 2. [Mô hình mạng tổ chức](Mô-hình-mạng-tổ-chức)
+3. [Các giai đoạn của cuộc tấn công mạng](#Các-giai-đoạn-của-cuộc-tấn-công-mạng)
+    - [Reconnaissance](#Reconnaissance)
+    - [Intrusion](#Intrusion)
+    - [Delivery](#Delivery)
+    - [Exploitation](#Exploitation)
+    - [Installation](#Installation)
+    - [Privilege Escalation](#Privilege-Escalation)
+    - [Lateral Movement](#Lateral-Movement)
+    - [Obfuscation](#Obfuscation)
+    - [Denial of Service](#Denial-of-Service)
+    - [Exfiltration](#Exfiltration)
 ## Vấn đề an ninh an toàn mạng tổ chức
+
 Các giai đoạn của một cuộc tấn công mạng - Cyberattack. 
 
 Theo đó, tài liệu này sẽ mô tả một chuỗi các bước của một cuộc tấn công mạng, tính từ giai đoạn thu thập thông tin cho đến khi thực hiện việc đánh cắp dữ liệu hay chiếm quyền hệ thống. Thông qua việc phác thảo các giai đoạn khác nhau của một cuộc tấn công mạng, tài liệu cung cấp cái nhìn sâu sắc hơn về một cuộc tấn công, giúp các chuyên gia bảo mật, quản trị viên hệ thống nắm được các "điểm nóng", hiểu được trước các chiến thuật, kỹ thuật và quy trình của đối thủ. Từ đó, nhóm bảo mật sẽ ở thế chủ động, sớm ngăn chặn, phát hiện và đánh chặn những kẻ tấn công.
@@ -25,4 +37,26 @@ BMC-NE2448P.
 luồng dữ liệu từ xa được bảo mật bởi kênh VPN giữa thiết bị di động và Thiết bị IPEv46.
 - Khu vực Backup: Có dùng thiết bị truyền dẫn một chiều iNET-11A để đảm bảo dữ liệu chỉ có đi
 vào khu Backup/DataCenter.
+## Các giai đoạn của cuộc tấn công mạng
+Xét theo mô hình trên, mục tiêu tối thượng chúng ta cần nhắm đến là **Server Đa dịch vụ** và **Khu vực Backup/ DataCenter**. 
 
+Trong khi đánh sập hay chiếm đoạt được Server Đa dịch vụ có thể dẫn đến hậu quả nghiêm trọng như mất dữ liệu quan trọng, dịch vụ gián đoạn, rò rỉ thông tin cá nhân, dữ liệu nhạy cảm của công ty, của khách hàng. Song song đó, nếu những kẻ tấn công chiếm được khu vực Backup/ Datacenter, chúng có thể làm tê liệt toàn bộ hệ thống dự phòng, khiến cho việc phục hồi và khôi phục dữ liệu trở nên khó khăn hoặc thậm chí không thể.
+### Reconnaissance
+Đây là bước đầu tiên trong chuỗi nhưng lại là bước đóng vai trò quan trọng nhất, quyết định sự thành bại của một cuộc tấn công. 
+
+Cuộc tấn công nào cũng vậy, đều bắt đầu từ việc thu thập thông tin về mục tiêu trước, càng nhiều càng tốt, nhằm tìm ra được các điểm yếu, từ điểm yếu đó mới xác định được các vector tấn công tiềm năng. Công cuộc tìm kiếm này thực sự không có một giới hạn nào cả, chúng ta cần tìm tất cả mọi thứ có thể: thông tin công khai trên Internet, thông tin về mạng, thông tin về hệ thống, thông tin tổ chức của mục tiêu, địa chỉ email, ID người dùng,...
+
+Tóm lại, càng thu thập được nhiều thông tin thì tỉ lệ thành công của một cuộc tấn công càng cao. 
+
+
+
+
+
+
+
+
+
+
+
+
+Obfuscation - Anti-forensics 
