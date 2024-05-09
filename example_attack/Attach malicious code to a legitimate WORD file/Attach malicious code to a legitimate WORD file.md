@@ -33,7 +33,7 @@ C:\User\Document\obfucator.cmd RVS.bat
 ```
 ### File liên quan
 
-[ReverseShell.au3](https://github.com/thotrangyeuduoi/template/blob/master/example_attack/ReverseShell_by_Autoit.au3)
+[ReverseShell.au3](https://github.com/thotrangyeuduoi/template/blob/master/example_attack/Attach%20malicious%20code%20to%20a%20legitimate%20WORD%20file/ReverseShell_by_Autoit.au3)
 
 Ref: https://anonyviet.com/cach-hacker-bypass-av-xam-nhap-windows-voi-autoit/
 
