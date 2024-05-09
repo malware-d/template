@@ -36,3 +36,4 @@ C:\User\Document\obfucator.cmd RVS.bat
 [ReverseShell.au3](https://github.com/thotrangyeuduoi/template/blob/master/example_attack/ReverseShell_by_Autoit.au3)
 
 Ref: https://anonyviet.com/cach-hacker-bypass-av-xam-nhap-windows-voi-autoit/
+     https://anonyviet.com/phuong-phap-phat-tan-virus-bang-file-word/
