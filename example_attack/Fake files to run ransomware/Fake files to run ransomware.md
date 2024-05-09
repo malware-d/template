@@ -36,4 +36,8 @@ Trong demo này, file ảnh sẽ được giả mạo để thực thi ransomwar
 3. Advanced -> SFX options
 4. "Path to extract: Điền thư mục thử nghiệm vào đây", Setup - Run after extraction: backup_data.bat, Text and icon: tự đặt, Modes: Hide all
 
+Ref: https://anonyviet.com/cach-tao-ransomware-bang-python/
+
+https://medium.com/@psychomong/how-to-embed-exe-with-image-c6743cc9ab6b
+
 
