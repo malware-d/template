@@ -37,4 +37,4 @@ C:\User\Document\obfucator.cmd RVS.bat
 
 Ref: https://anonyviet.com/cach-hacker-bypass-av-xam-nhap-windows-voi-autoit/
 
-     https://anonyviet.com/phuong-phap-phat-tan-virus-bang-file-word/
+https://anonyviet.com/phuong-phap-phat-tan-virus-bang-file-word/
