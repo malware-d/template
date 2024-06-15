@@ -515,3 +515,5 @@ Kết nối
 ```console
 $ sudo openvpn --config client1.ovpn
 ```
+
+REF: https://cloudfly.vn/techblog/cach-thiet-lap-va-dinh-cau-hinh-may-chu-openvpn-tren-ubuntu-2004-phan-22
