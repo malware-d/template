@@ -1,26 +1,26 @@
-<mxfile host="app.diagrams.net" modified="2024-06-21T07:12:13.328Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0" etag="1Ouvlg0Vai7m0VDC72M9" version="24.4.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-21T09:36:15.192Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0" etag="LeCBoecyz3A6yxOkDnMI" version="24.4.7" type="github">
   <diagram name="Page-1" id="e3a06f82-3646-2815-327d-82caf3d4e204">
-    <mxGraphModel dx="3465" dy="2203" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2452" dy="1528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" style=";html=1;" />
         <mxCell id="1" style=";html=1;" parent="0" />
-        <mxCell id="6a7d8f32e03d9370-61" value="" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=14;strokeColor=none;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="2165.29" y="760" width="603" height="384" as="geometry" />
+        <mxCell id="6a7d8f32e03d9370-61" value="" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;fontSize=14;strokeColor=none;verticalAlign=top;fontColor=#3f8f14;" parent="1" vertex="1">
+          <mxGeometry x="1921.29" y="760" width="488.71" height="384" as="geometry" />
         </mxCell>
         <mxCell id="6a7d8f32e03d9370-60" value="" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontSize=14;strokeColor=none;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="920.5" y="758" width="623" height="386" as="geometry" />
         </mxCell>
         <mxCell id="6a7d8f32e03d9370-16" value="&lt;span id=&quot;docs-internal-guid-9d835d87-7fff-4643-cab0-f77259b9171f&quot;&gt;&lt;span style=&quot;font-size: 14pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;&amp;nbsp;Database&lt;/span&gt;&lt;/span&gt;" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.chassis;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="2205.29" y="794.5" width="70.11" height="90.5" as="geometry" />
+          <mxGeometry x="1961.29" y="794.5" width="70.11" height="90.5" as="geometry" />
         </mxCell>
         <mxCell id="6a7d8f32e03d9370-31" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.site;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="1379.5" y="995" width="107" height="101" as="geometry" />
         </mxCell>
-        <mxCell id="3PxMr9hApGVc-ur7nNP5-1" value="&lt;span style=&quot;font-size: 21px;&quot; id=&quot;docs-internal-guid-a3162c0a-7fff-53ce-2dbf-dc34f5ae93af&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;Mạng đô thị thành phố (MAN)&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;div style=&quot;font-size: 21px;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot; face=&quot;Times New Roman, serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&lt;i style=&quot;&quot;&gt;191 đơn vị ~ 20.000 users&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+        <mxCell id="3PxMr9hApGVc-ur7nNP5-1" value="&lt;span id=&quot;docs-internal-guid-a3162c0a-7fff-53ce-2dbf-dc34f5ae93af&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;Mạng đô thị thành phố (MAN)&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;div style=&quot;font-size: 21px;&quot;&gt;&lt;font face=&quot;Times New Roman, serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&lt;i style=&quot;&quot;&gt;191 đơn vị ~ 20.000 users&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#3f8f14;" vertex="1" parent="1">
           <mxGeometry x="1096.5" y="926" width="283" height="50" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-2" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.site;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" vertex="1" parent="1">
-          <mxGeometry x="1185" y="1037" width="107" height="101" as="geometry" />
+          <mxGeometry x="1185" y="1036" width="107" height="101" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-3" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.site;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="973" y="794.5" width="107" height="101" as="geometry" />
@@ -34,45 +34,45 @@
         <mxCell id="3PxMr9hApGVc-ur7nNP5-6" value="" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.site;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="1185" y="770" width="107" height="101" as="geometry" />
         </mxCell>
-        <mxCell id="3PxMr9hApGVc-ur7nNP5-7" value="&lt;div style=&quot;font-size: 21px;&quot;&gt;&lt;span id=&quot;docs-internal-guid-ce577cba-7fff-6681-e3cf-3ff28a774a8f&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;b style=&quot;font-size: 21px;&quot;&gt;Trung tâm dữ liệu (DC)&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 21px;&quot;&gt;&lt;font face=&quot;Times New Roman, serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve; font-size: 21px;&quot;&gt;&lt;i style=&quot;font-size: 21px;&quot;&gt;150 server vật lý ~ 500 server &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=21;" vertex="1" parent="1">
-          <mxGeometry x="2325.29" y="926" width="283" height="50" as="geometry" />
+        <mxCell id="3PxMr9hApGVc-ur7nNP5-7" value="&lt;div style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px;&quot; id=&quot;docs-internal-guid-ce577cba-7fff-6681-e3cf-3ff28a774a8f&quot;&gt;&lt;span style=&quot;font-size: 21px; font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;b style=&quot;font-size: 21px;&quot;&gt;Trung tâm dữ liệu (DC)&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 21px;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot; face=&quot;Times New Roman, serif&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve; font-size: 21px;&quot;&gt;&lt;i style=&quot;font-size: 21px;&quot;&gt;150 server vật lý ~ 500 server &lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=21;fontColor=#a81010;" vertex="1" parent="1">
+          <mxGeometry x="2014.29" y="926" width="283" height="50" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-8" value="&lt;span id=&quot;docs-internal-guid-d623d883-7fff-5d30-a4e0-7b7bfae6a25a&quot;&gt;&lt;span style=&quot;font-size: 14pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;Application &lt;/span&gt;&lt;/span&gt;" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.chassis;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" vertex="1" parent="1">
-          <mxGeometry x="2205.29" y="1017.5" width="70.11" height="90.5" as="geometry" />
+          <mxGeometry x="1961.29" y="1017.5" width="70.11" height="90.5" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-9" value="&lt;span id=&quot;docs-internal-guid-1cf09a69-7fff-9a33-591f-fb55b128711d&quot;&gt;&lt;span style=&quot;font-size: 14pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;Test and Development&lt;/span&gt;&lt;/span&gt;" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.chassis;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" vertex="1" parent="1">
-          <mxGeometry x="2655.29" y="799.75" width="70.11" height="90.5" as="geometry" />
+          <mxGeometry x="2297.29" y="799.75" width="70.11" height="90.5" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-10" value="&lt;span id=&quot;docs-internal-guid-0598049a-7fff-75d8-6361-de486bc13585&quot;&gt;&lt;span style=&quot;font-size: 14pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space: pre-wrap;&quot;&gt;Management&lt;/span&gt;&lt;/span&gt;" style="verticalLabelPosition=bottom;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;shape=mxgraph.citrix.chassis;fillColor=#66B2FF;gradientColor=#0066CC;fontSize=14;" vertex="1" parent="1">
-          <mxGeometry x="2655.29" y="1017.5" width="70.11" height="90.5" as="geometry" />
+          <mxGeometry x="2297.29" y="1017.5" width="70.11" height="90.5" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-13" value="" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.firewall;" vertex="1" parent="1">
           <mxGeometry x="1165.56" y="300" width="133.87" height="166" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-15" value="" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.cloud;textShadow=0;" vertex="1" parent="1">
-          <mxGeometry x="2230.29" y="201" width="542.42" height="354" as="geometry" />
+          <mxGeometry x="1873.29" y="201" width="542.42" height="354" as="geometry" />
         </mxCell>
-        <mxCell id="3PxMr9hApGVc-ur7nNP5-17" value="&lt;font color=&quot;#ff2e17&quot;&gt;Firewall&amp;nbsp;&lt;span id=&quot;docs-internal-guid-8ebe34da-7fff-6cad-656f-97937fef2c96&quot;&gt;&lt;span style=&quot;font-size: 14pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Fortinet 2500E&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="3PxMr9hApGVc-ur7nNP5-17" value="&lt;font color=&quot;#ff2e17&quot;&gt;Firewall&amp;nbsp;&lt;span id=&quot;docs-internal-guid-8ebe34da-7fff-6cad-656f-97937fef2c96&quot; style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14pt; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Fortinet 2500E&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontFamily=Times New Roman;" vertex="1" parent="1">
           <mxGeometry x="1163.5" y="480" width="138" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-19" value="" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.command_center;" vertex="1" parent="1">
-          <mxGeometry x="1795" y="808" width="112.47" height="143" as="geometry" />
+          <mxGeometry x="1678" y="808" width="112.47" height="143" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-20" value="" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.firewall;" vertex="1" parent="1">
-          <mxGeometry x="1797.06" y="964" width="108.87" height="135" as="geometry" />
+          <mxGeometry x="1680.06" y="964" width="108.87" height="135" as="geometry" />
         </mxCell>
-        <mxCell id="3PxMr9hApGVc-ur7nNP5-21" value="&lt;font color=&quot;#ff2e17&quot;&gt;Firewall&amp;nbsp;&lt;span id=&quot;docs-internal-guid-8ebe34da-7fff-6cad-656f-97937fef2c96&quot;&gt;&lt;span style=&quot;font-size: 14pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Fortinet &lt;/span&gt;&lt;/span&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="1795" y="1099" width="138" height="30" as="geometry" />
+        <mxCell id="3PxMr9hApGVc-ur7nNP5-21" value="&lt;font color=&quot;#ff2e17&quot;&gt;Firewall&amp;nbsp;&lt;span id=&quot;docs-internal-guid-8ebe34da-7fff-6cad-656f-97937fef2c96&quot;&gt;&lt;span style=&quot;font-size: 14pt; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Fortinet&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#ff2e17&quot;&gt;&lt;span&gt;&lt;span style=&quot;font-size: 14pt; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;620B &lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="1667" y="1110" width="138" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="3PxMr9hApGVc-ur7nNP5-22" value="&lt;font color=&quot;#ff2e17&quot;&gt;&lt;span id=&quot;docs-internal-guid-8ebe34da-7fff-6cad-656f-97937fef2c96&quot;&gt;&lt;span style=&quot;background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;Cân bằng tải Core-&lt;font face=&quot;Times New Roman, serif&quot;&gt;&lt;span style=&quot;font-size: 18.6667px; white-space-collapse: preserve;&quot;&gt;Nexus&lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="1782.2299999999998" y="769" width="138" height="30" as="geometry" />
+        <mxCell id="3PxMr9hApGVc-ur7nNP5-22" value="&lt;font color=&quot;#ff2e17&quot;&gt;&lt;span id=&quot;docs-internal-guid-8ebe34da-7fff-6cad-656f-97937fef2c96&quot;&gt;&lt;span style=&quot;background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;Cân bằng tải Core-&lt;font&gt;&lt;span style=&quot;font-size: 18.6667px; white-space-collapse: preserve;&quot;&gt;Nexus&lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontFamily=Times New Roman;" vertex="1" parent="1">
+          <mxGeometry x="1665.2299999999998" y="769" width="138" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3PxMr9hApGVc-ur7nNP5-23" value="INTERNET" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=57;fontStyle=1;fontColor=#3991ea;labelBorderColor=none;textShadow=1;labelBackgroundColor=none;" vertex="1" parent="1">
-          <mxGeometry x="2495" y="369" width="60" height="30" as="geometry" />
+          <mxGeometry x="2138" y="369" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="3PxMr9hApGVc-ur7nNP5-26" value="" style="endArrow=none;html=1;rounded=0;fontSize=42;startSize=8;endSize=8;curved=1;strokeWidth=6;strokeColor=#666666;" edge="1" parent="1" source="3PxMr9hApGVc-ur7nNP5-15" target="3PxMr9hApGVc-ur7nNP5-13">
+        <mxCell id="3PxMr9hApGVc-ur7nNP5-26" value="" style="endArrow=none;html=1;rounded=0;fontSize=42;startSize=8;endSize=8;curved=1;strokeWidth=6;strokeColor=#666666;exitX=0.007;exitY=0.507;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="3PxMr9hApGVc-ur7nNP5-15" target="3PxMr9hApGVc-ur7nNP5-13">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1510" y="420" as="sourcePoint" />
+            <mxPoint x="1940" y="378" as="sourcePoint" />
             <mxPoint x="1560" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
@@ -82,16 +82,16 @@
             <mxPoint x="1232.5" y="514" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="3PxMr9hApGVc-ur7nNP5-31" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="6a7d8f32e03d9370-60">
+        <mxCell id="3PxMr9hApGVc-ur7nNP5-31" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=6;strokeColor=#666666;" edge="1" parent="1" source="6a7d8f32e03d9370-60">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1940" y="920" as="sourcePoint" />
-            <mxPoint x="1800" y="950" as="targetPoint" />
+            <mxPoint x="1680" y="950" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="3PxMr9hApGVc-ur7nNP5-32" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="3PxMr9hApGVc-ur7nNP5-32" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=6;strokeColor=#666666;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1910" y="951.41" as="sourcePoint" />
-            <mxPoint x="2166" y="950.41" as="targetPoint" />
+            <mxPoint x="1793" y="951.41" as="sourcePoint" />
+            <mxPoint x="1920" y="950" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
