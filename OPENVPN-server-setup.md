@@ -4,7 +4,7 @@ OpenVPN là một giải pháp Transport Layer Security VPN (TLS)
 ## Requisites
 - 01 máy chủ Ubuntu có **sudo non-root user** và **firewall enabled** -> OpenVPN server
 
-- 01 máy chủ Ubuntu riêng biệt được thiết lập làm Certificate Authority (Cơ quan cấp chứng chỉ - CA) riêng -> CA Server -> Thực hiện các bước từ 1 đến 3 trong Hướng dẫn cấu hình CA server
+- 01 máy chủ Ubuntu riêng biệt được thiết lập làm Certificate Authority (Cơ quan cấp chứng chỉ - CA) riêng -> CA Server -> [Thực hiện các bước từ 1 đến 3 trong Hướng dẫn cấu hình CA server](https://github.com/malware-d/template/blob/master/CA-server-setup.md)
 > Lưu ý: Về mặt kỹ thuật có thể sử dụng OpenVPN server hoặc máy local làm CA, NHƯNG không nên vì nó mở ra một số lỗ hổng bảo mật cho VPN. Theo tài liệu chính thức của OpenVPN, CA nên được đặt trên một máy độc lập dành riêng cho việc **import** và **sign** các yêu cầu chứng chỉ.
 ## Cài đặt OpenVPN và Easy-RSA
 Easy-RSA là công cụ quản lý cơ sở hạ tầng khóa công khai (PKI) mà chúng ta sẽ sử dụng trên OpenVPN server để tạo yêu cầu chứng chỉ - thứ mà chúng ta sẽ xác minh trên CA.
