@@ -523,5 +523,38 @@ $ getent group nobody
 #nếu nhóm nobody không tồn tại, tạo nhóm này
 $ sudo groupadd nobody
 ```
+### Cấu hình OpenVPN tự động khởi chạy cùng OS
+Di chuyển file cấu hình vào thư mục ***/etc/openvpn/***
+```console
+sudo mv /path/to/your/AIcomputer.ovpn /etc/openvpn/
+```
+Tạo một script để tự động khởi động OpenVPN
+```console
+sudo nano /etc/systemd/system/openvpn-autostart.service
+
+#Thêm nội dung sau vào file 
+[Unit]
+Description=Auto Start OpenVPN at Boot
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/openvpn --config /etc/openvpn/AIcomputer.ovpn
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+```
+Kích hoạt và khởi động dịch vụ
+```console
+sudo systemctl enable openvpn-autostart.service
+sudo systemctl start openvpn-autostart.service
+```
+Kiểm tra trạng thái dịch vụ
+```console
+sudo systemctl status openvpn-autostart.service
+```
+
+
 
 REF: https://cloudfly.vn/techblog/cach-thiet-lap-va-dinh-cau-hinh-may-chu-openvpn-tren-ubuntu-2004-phan-22
